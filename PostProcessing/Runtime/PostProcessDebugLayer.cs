@@ -62,25 +62,25 @@ namespace UnityEngine.Rendering.PostProcessing
         DepthOfField
     }
 
-    /// <summary>
-    /// A list of color blindness types.
-    /// </summary>
-    public enum ColorBlindnessType
+    ///     <summary>
+        ///     A list of color blindness types.
+        ///     </summary>
+            public enum ColorBlindnessType
     {
-        /// <summary>
-        /// Deuteranopia (red-green color blindness).
-        /// </summary>
-        Deuteranopia,
+        ///     <summary>
+                ///     Deuteranopia (red-green color blindness).
+                ///     </summary>
+                        Deuteranopia,
 
-        /// <summary>
-        /// Protanopia (red-green color blindness).
-        /// </summary>
-        Protanopia,
+        ///     <summary>
+                ///     Protanopia (red-green color blindness).
+                ///     </summary>
+                        Protanopia,
 
-        /// <summary>
-        /// Tritanopia (blue-yellow color blindness).
-        /// </summary>
-        Tritanopia
+        ///     <summary>
+                ///     Tritanopia (blue-yellow color blindness).
+                ///     </summary>
+                        Tritanopia
     }
 
     ///     <summary>
