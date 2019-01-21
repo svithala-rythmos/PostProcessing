@@ -83,31 +83,31 @@ namespace UnityEngine.Rendering.PostProcessing
         Tritanopia
     }
 
-    /// <summary>
-    /// This class centralizes rendering commands for debug modes.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class centralizes rendering commands for debug modes.
+        ///     </summary>
+            [Serializable]
     public sealed class PostProcessDebugLayer
     {
-        /// <summary>
-        /// Light meter renderer.
-        /// </summary>
-        public LightMeterMonitor lightMeter;
+        ///     <summary>
+                ///     Light meter renderer.
+                ///     </summary>
+                        public LightMeterMonitor lightMeter;
 
-        /// <summary>
-        /// Histogram renderer.
-        /// </summary>
-        public HistogramMonitor histogram;
+        ///     <summary>
+                ///     Histogram renderer.
+                ///     </summary>
+                        public HistogramMonitor histogram;
 
-        /// <summary>
-        /// Waveform renderer.
-        /// </summary>
-        public WaveformMonitor waveform;
+        ///     <summary>
+                ///     Waveform renderer.
+                ///     </summary>
+                        public WaveformMonitor waveform;
 
-        /// <summary>
-        /// Vectorscope monitor.
-        /// </summary>
-        public VectorscopeMonitor vectorscope;
+        ///     <summary>
+                ///     Vectorscope monitor.
+                ///     </summary>
+                        public VectorscopeMonitor vectorscope;
 
         Dictionary<MonitorType, Monitor> m_Monitors;
 
@@ -115,21 +115,16 @@ namespace UnityEngine.Rendering.PostProcessing
         int frameWidth;
         int frameHeight;
 
-        /// <summary>
-        /// The render target used to render debug overlays in.
-        /// </summary>
-        public RenderTexture debugOverlayTarget { get; private set; }
+        ///     <summary>
+                ///     The render target used to render debug overlays in.
+                ///     </summary>
+                        public RenderTexture debugOverlayTarget { get; private set; }
 
-        /// <summary>
-        /// Returns <c>true</c> if the frame that was just drawn had an active debug overlay.
-        /// </summary>
-        public bool debugOverlayActive { get; private set; }
+        /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.PostProcessDebugLayer.debugOverlayActive" -->
+                        public bool debugOverlayActive { get; private set; }
 
-        /// <summary>
-        /// The debug overlay requested for the current frame. It is reset to <c>None</c> once the
-        /// frame has finished rendering.
-        /// </summary>
-        public DebugOverlay debugOverlay { get; private set; }
+        /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.PostProcessDebugLayer.debugOverlay" -->
+                        public DebugOverlay debugOverlay { get; private set; }
 
         /// <summary>
         /// Debug overlay settings wrapper.
@@ -166,10 +161,10 @@ namespace UnityEngine.Rendering.PostProcessing
             public float colorBlindnessStrength = 1f;
         }
 
-        /// <summary>
-        /// Debug overlay settings.
-        /// </summary>
-        public OverlaySettings overlaySettings;
+        ///     <summary>
+                ///     Debug overlay settings.
+                ///     </summary>
+                        public OverlaySettings overlaySettings;
 
         internal void OnEnable()
         {
@@ -205,20 +200,20 @@ namespace UnityEngine.Rendering.PostProcessing
             debugOverlayTarget = null;
         }
 
-        /// <summary>
-        /// Requests the drawing of a monitor for the current frame.
-        /// </summary>
-        /// <param name="monitor">The monitor to request</param>
-        public void RequestMonitorPass(MonitorType monitor)
+        ///     <summary>
+                ///     Requests the drawing of a monitor for the current frame.
+                ///     </summary>
+                ///     <param name="monitor">The monitor to request</param>
+                        public void RequestMonitorPass(MonitorType monitor)
         {
             m_Monitors[monitor].requested = true;
         }
 
-        /// <summary>
-        /// Requests the drawing of a debug overlay for the current frame.
-        /// </summary>
-        /// <param name="mode">The debug overlay to request</param>
-        public void RequestDebugOverlay(DebugOverlay mode)
+        ///     <summary>
+                ///     Requests the drawing of a debug overlay for the current frame.
+                ///     </summary>
+                ///     <param name="mode">The debug overlay to request</param>
+                        public void RequestDebugOverlay(DebugOverlay mode)
         {
             debugOverlay = mode;
         }
@@ -232,14 +227,14 @@ namespace UnityEngine.Rendering.PostProcessing
             debugOverlayActive = false;
         }
 
-        /// <summary>
-        /// Blit a source render target to the debug overlay target.
-        /// </summary>
-        /// <param name="cmd">The command buffer to send render commands to</param>
-        /// <param name="source">The source target</param>
-        /// <param name="sheet">The property sheet to use for the blit</param>
-        /// <param name="pass">The pass to use for the property sheet</param>
-        public void PushDebugOverlay(CommandBuffer cmd, RenderTargetIdentifier source, PropertySheet sheet, int pass)
+        ///     <summary>
+                ///     Blit a source render target to the debug overlay target.
+                ///     </summary>
+                ///     <param name="cmd">The command buffer to send render commands to</param>
+                ///     <param name="source">The source target</param>
+                ///     <param name="sheet">The property sheet to use for the blit</param>
+                ///     <param name="pass">The pass to use for the property sheet</param>
+                        public void PushDebugOverlay(CommandBuffer cmd, RenderTargetIdentifier source, PropertySheet sheet, int pass)
         {
             if (debugOverlayTarget == null || !debugOverlayTarget.IsCreated() || debugOverlayTarget.width != frameWidth || debugOverlayTarget.height != frameHeight)
             {
