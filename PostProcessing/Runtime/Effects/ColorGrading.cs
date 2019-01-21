@@ -27,35 +27,35 @@ namespace UnityEngine.Rendering.PostProcessing
                         External
     }
 
-    /// <summary>
-    /// Tonemapping methods.
-    /// </summary>
-    public enum Tonemapper
+    ///     <summary>
+        ///     Tonemapping methods.
+        ///     </summary>
+            public enum Tonemapper
     {
-        /// <summary>
-        /// No tonemapping will be applied.
-        /// </summary>
-        None,
+        ///     <summary>
+                ///     No tonemapping will be applied.
+                ///     </summary>
+                        None,
 
-        /// <summary>
-        /// This method only does range-remapping with minimal impact on color hue & saturation and
-        /// is generally a great starting point for extensive color grading.
-        /// </summary>
-        Neutral,
+        ///     <summary>
+                ///     This method only does range-remapping with minimal impact on color hue & saturation and
+                ///     is generally a great starting point for extensive color grading.
+                ///     </summary>
+                        Neutral,
 
-        /// <summary>
-        /// This method uses a close approximation of the reference ACES tonemapper for a more
-        /// filmic look. Because of that, it is more contrasted than <see cref="Neutral"/>and has an
-        /// effect on actual color hue & saturation. Note that if you enable this tonemapper all the
-        /// grading operations will be done in the ACES color spaces for optimal precision and
-        /// results.
-        /// </summary>
-        ACES,
+        ///     <summary>
+                ///     This method uses a close approximation of the reference ACES tonemapper for a more
+                ///     filmic look. Because of that, it is more contrasted than <see cref="Neutral"/>and has an
+                ///     effect on actual color hue & saturation. Note that if you enable this tonemapper all the
+                ///     grading operations will be done in the ACES color spaces for optimal precision and
+                ///     results.
+                ///     </summary>
+                        ACES,
 
-        /// <summary>
-        /// This method offers a fully parametric, artist-friendly tonemapper.
-        /// </summary>
-        Custom
+        ///     <summary>
+                ///     This method offers a fully parametric, artist-friendly tonemapper.
+                ///     </summary>
+                        Custom
     }
 
     ///     <summary>
