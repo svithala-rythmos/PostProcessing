@@ -190,18 +190,12 @@ namespace UnityEngine.Rendering.PostProcessing
         }
     }
 
-    /// <summary>
-    /// A <see cref="ParameterOverride{T}"/> that holds a <c>int</c> value.
-    /// </summary>
-    /// <remarks>
-    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
-    /// casted to <c>int</c>.
-    /// </remarks>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEngine.Rendering.PostProcessing.IntParameter" -->
+            [Serializable]
     public sealed class IntParameter : ParameterOverride<int>
     {
-        /// <inheritdoc />
-        public override void Interp(int from, int to, float t)
+        ///     <inheritdoc />
+                        public override void Interp(int from, int to, float t)
         {
             // Int snapping interpolation. Don't use this for enums as they don't necessarily have
             // contiguous values. Use the default interpolator instead (same as bool).
