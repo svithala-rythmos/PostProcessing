@@ -44,61 +44,61 @@ namespace UnityEngine.Rendering.PostProcessing
             [Serializable]
     public sealed class ScreenSpaceReflectionResolutionParameter : ParameterOverride<ScreenSpaceReflectionResolution> { }
 
-    /// <summary>
-    /// This class holds settings for the Screen-space Reflections effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class holds settings for the Screen-space Reflections effect.
+        ///     </summary>
+            [Serializable]
     [PostProcess(typeof(ScreenSpaceReflectionsRenderer), "Unity/Screen-space reflections")]
     public sealed class ScreenSpaceReflections : PostProcessEffectSettings
     {
-        /// <summary>
-        /// The quality preset to use for rendering. Use <see cref="ScreenSpaceReflectionPreset.Custom"/>
-        /// to tweak settings.
-        /// </summary>
-        [Tooltip("Choose a quality preset, or use \"Custom\" to create your own custom preset. Don't use a preset higher than \"Medium\" if you desire good performance on consoles.")]
+        ///     <summary>
+                ///     The quality preset to use for rendering. Use <see cref="ScreenSpaceReflectionPreset.Custom"/>
+                ///     to tweak settings.
+                ///     </summary>
+                        [Tooltip("Choose a quality preset, or use \"Custom\" to create your own custom preset. Don't use a preset higher than \"Medium\" if you desire good performance on consoles.")]
         public ScreenSpaceReflectionPresetParameter preset = new ScreenSpaceReflectionPresetParameter { value = ScreenSpaceReflectionPreset.Medium };
 
-        /// <summary>
-        /// The maximum number of steps in the raymarching pass. Higher values mean more reflections.
-        /// </summary>
-        [Range(0, 256), Tooltip("Maximum number of steps in the raymarching pass. Higher values mean more reflections.")]
+        ///     <summary>
+                ///     The maximum number of steps in the raymarching pass. Higher values mean more reflections.
+                ///     </summary>
+                        [Range(0, 256), Tooltip("Maximum number of steps in the raymarching pass. Higher values mean more reflections.")]
         public IntParameter maximumIterationCount = new IntParameter { value = 16 };
 
-        /// <summary>
-        /// Changes the size of the internal buffer. Downsample it to maximize performances or
-        /// supersample it to get slow but higher quality results.
-        /// </summary>
-        [Tooltip("Changes the size of the SSR buffer. Downsample it to maximize performances or supersample it for higher quality results with reduced performance.")]
+        ///     <summary>
+                ///     Changes the size of the internal buffer. Downsample it to maximize performances or
+                ///     supersample it to get slow but higher quality results.
+                ///     </summary>
+                        [Tooltip("Changes the size of the SSR buffer. Downsample it to maximize performances or supersample it for higher quality results with reduced performance.")]
         public ScreenSpaceReflectionResolutionParameter resolution = new ScreenSpaceReflectionResolutionParameter { value = ScreenSpaceReflectionResolution.Downsampled };
 
-        /// <summary>
-        /// The ray thickness. Lower values are more expensive but allow the effect to detect
-        /// smaller details.
-        /// </summary>
-        [Range(1f, 64f), Tooltip("Ray thickness. Lower values are more expensive but allow the effect to detect smaller details.")]
+        ///     <summary>
+                ///     The ray thickness. Lower values are more expensive but allow the effect to detect
+                ///     smaller details.
+                ///     </summary>
+                        [Range(1f, 64f), Tooltip("Ray thickness. Lower values are more expensive but allow the effect to detect smaller details.")]
         public FloatParameter thickness = new FloatParameter { value = 8f };
 
-        /// <summary>
-        /// The maximum distance to traverse in the scene after which it will stop drawing
-        /// reflections.
-        /// </summary>
-        [Tooltip("Maximum distance to traverse after which it will stop drawing reflections.")]
+        ///     <summary>
+                ///     The maximum distance to traverse in the scene after which it will stop drawing
+                ///     reflections.
+                ///     </summary>
+                        [Tooltip("Maximum distance to traverse after which it will stop drawing reflections.")]
         public FloatParameter maximumMarchDistance = new FloatParameter { value = 100f };
 
-        /// <summary>
-        /// Fades reflections close to the near plane. This is useful to hide common artifacts.
-        /// </summary>
-        [Range(0f, 1f), Tooltip("Fades reflections close to the near planes.")]
+        ///     <summary>
+                ///     Fades reflections close to the near plane. This is useful to hide common artifacts.
+                ///     </summary>
+                        [Range(0f, 1f), Tooltip("Fades reflections close to the near planes.")]
         public FloatParameter distanceFade = new FloatParameter { value = 0.5f };
 
-        /// <summary>
-        /// Fades reflections close to the screen edges.
-        /// </summary>
-        [Range(0f, 1f), Tooltip("Fades reflections close to the screen edges.")]
+        ///     <summary>
+                ///     Fades reflections close to the screen edges.
+                ///     </summary>
+                        [Range(0f, 1f), Tooltip("Fades reflections close to the screen edges.")]
         public FloatParameter vignette = new FloatParameter { value = 0.5f };
 
-        /// <inheritdoc />
-        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
+        ///     <inheritdoc />
+                        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
         {
             return enabled
                 && context.camera.actualRenderingPath == RenderingPath.DeferredShading
