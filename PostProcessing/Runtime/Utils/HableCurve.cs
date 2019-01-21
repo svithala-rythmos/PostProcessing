@@ -293,10 +293,10 @@ namespace UnityEngine.Rendering.PostProcessing
             return ret;
         }
 
-        /// <summary>
-        /// Utility class to retrieve curve values for shader evaluation.
-        /// </summary>
-        public class Uniforms
+        ///     <summary>
+                ///     Utility class to retrieve curve values for shader evaluation.
+                ///     </summary>
+                        public class Uniforms
         {
             HableCurve parent;
 
@@ -305,18 +305,14 @@ namespace UnityEngine.Rendering.PostProcessing
                 this.parent = parent;
             }
 
-            /// <summary>
-            /// A pre-built <see cref="Vector4"/> holding: <c>(inverseWhitePoint, x0, x1, 0)</c>.
-            /// </summary>
-            public Vector4 curve
+            /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.HableCurve.Uniforms.curve" -->
+                                    public Vector4 curve
             {
                 get { return new Vector4(parent.inverseWhitePoint, parent.x0, parent.x1, 0f); }
             }
 
-            /// <summary>
-            /// A pre-built <see cref="Vector4"/> holding: <c>(toe.offsetX, toe.offsetY, toe.scaleX, toe.scaleY)</c>.
-            /// </summary>
-            public Vector4 toeSegmentA
+            /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.HableCurve.Uniforms.toeSegmentA" -->
+                                    public Vector4 toeSegmentA
             {
                 get
                 {
@@ -325,10 +321,8 @@ namespace UnityEngine.Rendering.PostProcessing
                 }
             }
 
-            /// <summary>
-            /// A pre-built <see cref="Vector4"/> holding: <c>(toe.lnA, toe.B, 0, 0)</c>.
-            /// </summary>
-            public Vector4 toeSegmentB
+            /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.HableCurve.Uniforms.toeSegmentB" -->
+                                    public Vector4 toeSegmentB
             {
                 get
                 {
@@ -337,10 +331,8 @@ namespace UnityEngine.Rendering.PostProcessing
                 }
             }
 
-            /// <summary>
-            /// A pre-built <see cref="Vector4"/> holding: <c>(mid.offsetX, mid.offsetY, mid.scaleX, mid.scaleY)</c>.
-            /// </summary>
-            public Vector4 midSegmentA
+            /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.HableCurve.Uniforms.midSegmentA" -->
+                                    public Vector4 midSegmentA
             {
                 get
                 {
@@ -349,10 +341,8 @@ namespace UnityEngine.Rendering.PostProcessing
                 }
             }
 
-            /// <summary>
-            /// A pre-built <see cref="Vector4"/> holding: <c>(mid.lnA, mid.B, 0, 0)</c>.
-            /// </summary>
-            public Vector4 midSegmentB
+            /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.HableCurve.Uniforms.midSegmentB" -->
+                                    public Vector4 midSegmentB
             {
                 get
                 {
@@ -361,10 +351,8 @@ namespace UnityEngine.Rendering.PostProcessing
                 }
             }
 
-            /// <summary>
-            /// A pre-built <see cref="Vector4"/> holding: <c>(toe.offsetX, toe.offsetY, toe.scaleX, toe.scaleY)</c>.
-            /// </summary>
-            public Vector4 shoSegmentA
+            /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.HableCurve.Uniforms.shoSegmentA" -->
+                                    public Vector4 shoSegmentA
             {
                 get
                 {
@@ -373,10 +361,8 @@ namespace UnityEngine.Rendering.PostProcessing
                 }
             }
 
-            /// <summary>
-            /// A pre-built <see cref="Vector4"/> holding: <c>(sho.lnA, sho.B, 0, 0)</c>.
-            /// </summary>
-            public Vector4 shoSegmentB
+            /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.HableCurve.Uniforms.shoSegmentB" -->
+                                    public Vector4 shoSegmentB
             {
                 get
                 {
