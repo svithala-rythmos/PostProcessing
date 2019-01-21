@@ -5,18 +5,18 @@ using UnityEngine.Assertions;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This manager tracks all volumes in the scene and does all the interpolation work. It is
-    /// automatically created as soon as Post-processing is active in a scene.
-    /// </summary>
-    public sealed class PostProcessManager
+    ///     <summary>
+    ///     This manager tracks all volumes in the scene and does all the interpolation work. It is
+    ///     automatically created as soon as Post-processing is active in a scene.
+    ///     </summary>
+        public sealed class PostProcessManager
     {
         static PostProcessManager s_Instance;
 
-        /// <summary>
-        /// The current singleton instance of <see cref="PostProcessManager"/>.
-        /// </summary>
-        public static PostProcessManager instance
+        ///     <summary>
+                ///     The current singleton instance of <see cref="PostProcessManager"/>.
+                ///     </summary>
+                        public static PostProcessManager instance
         {
             get
             {
@@ -34,12 +34,12 @@ namespace UnityEngine.Rendering.PostProcessing
         readonly List<PostProcessEffectSettings> m_BaseSettings;
         readonly List<Collider> m_TempColliders;
 
-        /// <summary>
-        /// This dictionary maps all <see cref="PostProcessEffectSettings"/> available to their
-        /// corresponding <see cref="PostProcessAttribute"/>. It can be used to list all loaded
-        /// builtin and custom effects.
-        /// </summary>
-        public readonly Dictionary<Type, PostProcessAttribute> settingsTypes;
+        ///     <summary>
+                ///     This dictionary maps all <see cref="PostProcessEffectSettings"/> available to their
+                ///     corresponding <see cref="PostProcessAttribute"/>. It can be used to list all loaded
+                ///     builtin and custom effects.
+                ///     </summary>
+                        public readonly Dictionary<Type, PostProcessAttribute> settingsTypes;
 
         PostProcessManager()
         {
@@ -99,15 +99,15 @@ namespace UnityEngine.Rendering.PostProcessing
             }
         }
 
-        /// <summary>
-        /// Gets a list of all volumes currently affecting the given layer. Results aren't sorted
-        /// and the list isn't cleared.
-        /// </summary>
-        /// <param name="layer">The layer to look for</param>
-        /// <param name="results">A list to store the volumes found</param>
-        /// <param name="skipDisabled">Should we skip disabled volumes?</param>
-        /// <param name="skipZeroWeight">Should we skip 0-weight volumes?</param>
-        public void GetActiveVolumes(PostProcessLayer layer, List<PostProcessVolume> results, bool skipDisabled = true, bool skipZeroWeight = true)
+        ///     <summary>
+                ///     Gets a list of all volumes currently affecting the given layer. Results aren't sorted
+                ///     and the list isn't cleared.
+                ///     </summary>
+                ///     <param name="layer">The layer to look for</param>
+                ///     <param name="results">A list to store the volumes found</param>
+                ///     <param name="skipDisabled">Should we skip disabled volumes?</param>
+                ///     <param name="skipZeroWeight">Should we skip 0-weight volumes?</param>
+                        public void GetActiveVolumes(PostProcessLayer layer, List<PostProcessVolume> results, bool skipDisabled = true, bool skipZeroWeight = true)
         {
             // If no trigger is set, only global volumes will have influence
             int mask = layer.volumeLayer.value;
@@ -165,12 +165,12 @@ namespace UnityEngine.Rendering.PostProcessing
             }
         }
 
-        /// <summary>
-        /// Gets the highest priority volume affecting a given layer.
-        /// </summary>
-        /// <param name="layer">The layer to look for</param>
-        /// <returns>The highest priority volume affecting the layer</returns>
-        public PostProcessVolume GetHighestPriorityVolume(PostProcessLayer layer)
+        ///     <summary>
+                ///     Gets the highest priority volume affecting a given layer.
+                ///     </summary>
+                ///     <param name="layer">The layer to look for</param>
+                ///     <returns>The highest priority volume affecting the layer</returns>
+                        public PostProcessVolume GetHighestPriorityVolume(PostProcessLayer layer)
         {
             if (layer == null)
                 throw new ArgumentNullException("layer");
@@ -178,14 +178,14 @@ namespace UnityEngine.Rendering.PostProcessing
             return GetHighestPriorityVolume(layer.volumeLayer);
         }
 
-        /// <summary>
-        /// Gets the highest priority volume affecting <see cref="PostProcessLayer"/> in a given
-        /// <see cref="LayerMask"/>.
-        /// </summary>
-        /// <param name="mask">The layer mask to look for</param>
-        /// <returns>The highest priority volume affecting the layer mask</returns>
-        /// <seealso cref="PostProcessLayer.volumeLayer"/>
-        public PostProcessVolume GetHighestPriorityVolume(LayerMask mask)
+        ///     <summary>
+                ///     Gets the highest priority volume affecting <see cref="PostProcessLayer"/> in a given
+                ///     <see cref="LayerMask"/>.
+                ///     </summary>
+                ///     <param name="mask">The layer mask to look for</param>
+                ///     <returns>The highest priority volume affecting the layer mask</returns>
+                ///     <seealso cref="F:UnityEngine.Rendering.PostProcessing.PostProcessLayer.volumeLayer"/>
+                        public PostProcessVolume GetHighestPriorityVolume(LayerMask mask)
         {
             float highestPriority = float.NegativeInfinity;
             PostProcessVolume output = null;
@@ -206,14 +206,14 @@ namespace UnityEngine.Rendering.PostProcessing
             return output;
         }
 
-        /// <summary>
-        /// Helper method to spawn a new volume in the scene.
-        /// </summary>
-        /// <param name="layer">The unity layer to put the volume in</param>
-        /// <param name="priority">The priority to set this volume to</param>
-        /// <param name="settings">A list of effects to put in this volume</param>
-        /// <returns></returns>
-        public PostProcessVolume QuickVolume(int layer, float priority, params PostProcessEffectSettings[] settings)
+        ///     <summary>
+                ///     Helper method to spawn a new volume in the scene.
+                ///     </summary>
+                ///     <param name="layer">The unity layer to put the volume in</param>
+                ///     <param name="priority">The priority to set this volume to</param>
+                ///     <param name="settings">A list of effects to put in this volume</param>
+                ///     <returns></returns>
+                        public PostProcessVolume QuickVolume(int layer, float priority, params PostProcessEffectSettings[] settings)
         {
             var gameObject = new GameObject()
             {
