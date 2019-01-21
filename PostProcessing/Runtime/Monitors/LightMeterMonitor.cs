@@ -1,30 +1,30 @@
-﻿using System;
+using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class holds settings for the Light Meter monitor.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class holds settings for the Light Meter monitor.
+        ///     </summary>
+            [Serializable]
     public sealed class LightMeterMonitor : Monitor
     {
-        /// <summary>
-        /// The width of the rendered light meter.
-        /// </summary>
-        public int width = 512;
+        ///     <summary>
+                ///     The width of the rendered light meter.
+                ///     </summary>
+                        public int width = 512;
 
-        /// <summary>
-        /// The height of the rendered light meter.
-        /// </summary>
-        public int height = 256;
+        ///     <summary>
+                ///     The height of the rendered light meter.
+                ///     </summary>
+                        public int height = 256;
 
-        /// <summary>
-        /// Should we display grading and tonemapping curves on top?
-        /// </summary>
-        /// <remarks>
-        /// This only works when <see cref="GradingMode.HighDefinitionRange"/> is active.
-        /// </remarks>
-        public bool showCurves = true;
+        ///     <summary>
+                ///     Should we display grading and tonemapping curves on top?
+                ///     </summary>
+                ///     <remarks>
+                ///     This only works when <see cref="GradingMode.HighDefinitionRange"/> is active.
+                ///     </remarks>
+                        public bool showCurves = true;
 
         internal override bool ShaderResourcesAvailable(PostProcessRenderContext context)
         {
