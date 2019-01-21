@@ -2,48 +2,50 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class holds settings for the Temporal Anti-aliasing (TAA) effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+    ///     This class holds settings for the Temporal Anti-aliasing (TAA) effect.
+    ///     </summary>
+        [Serializable]
     public sealed class TemporalAntialiasing
     {
-        /// <summary>
-        /// The diameter (in texels) inside which jitter samples are spread. Smaller values result
-        /// in crisper but more aliased output, while larger values result in more stable but
-        /// blurrier output.
-        /// </summary>
-        [Tooltip("The diameter (in texels) inside which jitter samples are spread. Smaller values result in crisper but more aliased output, while larger values result in more stable, but blurrier, output.")]
+        ///     <summary>
+                ///     The diameter (in texels) inside which jitter samples are spread. Smaller values result
+                ///     in crisper but more aliased output, while larger values result in more stable but
+                ///     blurrier output.
+                ///     </summary>
+                        [Tooltip("The diameter (in texels) inside which jitter samples are spread. Smaller values result in crisper but more aliased output, while larger values result in more stable, but blurrier, output.")]
         [Range(0.1f, 1f)]
         public float jitterSpread = 0.75f;
 
-        /// <summary>
-        /// Controls the amount of sharpening applied to the color buffer. High values may introduce
-        /// dark-border artifacts.
-        /// </summary>
-        [Tooltip("Controls the amount of sharpening applied to the color buffer. High values may introduce dark-border artifacts.")]
+        ///     <summary>
+                ///     Controls the amount of sharpening applied to the color buffer. High values may introduce
+                ///     dark-border artifacts.
+                ///     </summary>
+                        [Tooltip("Controls the amount of sharpening applied to the color buffer. High values may introduce dark-border artifacts.")]
         [Range(0f, 3f)]
         public float sharpness = 0.25f;
 
-        /// <summary>
-        /// The blend coefficient for a stationary fragment. Controls the percentage of history
-        /// sample blended into the final color.
-        /// </summary>
-        [Tooltip("The blend coefficient for a stationary fragment. Controls the percentage of history sample blended into the final color.")]
+        ///     <summary>
+                ///     The blend coefficient for a stationary fragment. Controls the percentage of history
+                ///     sample blended into the final color.
+                ///     </summary>
+                        [Tooltip("The blend coefficient for a stationary fragment. Controls the percentage of history sample blended into the final color.")]
         [Range(0f, 0.99f)]
         public float stationaryBlending = 0.95f;
 
-        /// <summary>
-        /// The blend coefficient for a fragment with significant motion. Controls the percentage of
-        /// history sample blended into the final color.
-        /// </summary>
-        [Tooltip("The blend coefficient for a fragment with significant motion. Controls the percentage of history sample blended into the final color.")]
+        ///     <summary>
+                ///     The blend coefficient for a fragment with significant motion. Controls the percentage of
+                ///     history sample blended into the final color.
+                ///     </summary>
+                        [Tooltip("The blend coefficient for a fragment with significant motion. Controls the percentage of history sample blended into the final color.")]
         [Range(0f, 0.99f)]
         public float motionBlending = 0.85f;
 
         // For custom jittered matrices - use at your own risks
+        
         public Func<Camera, Vector2, Matrix4x4> jitteredMatrixFunc;
 
+        
         public Vector2 jitter { get; private set; }
 
         enum Pass
@@ -56,6 +58,7 @@ namespace UnityEngine.Rendering.PostProcessing
         bool m_ResetHistory = true;
 
         const int k_SampleCount = 8;
+        
         public int sampleIndex { get; private set; }
 
         // Ping-pong between two history textures as we can't read & write the same target in the
@@ -66,6 +69,7 @@ namespace UnityEngine.Rendering.PostProcessing
 
         readonly int[] m_HistoryPingPong = new int [k_NumEyes];
 
+        
         public bool IsSupported()
         {
             return SystemInfo.supportedRenderTargetCount >= 2
@@ -101,6 +105,7 @@ namespace UnityEngine.Rendering.PostProcessing
             return offset;
         }
 
+        
         public Matrix4x4 GetJitteredProjectionMatrix(Camera camera)
         {
             Matrix4x4 cameraProj;
@@ -122,6 +127,7 @@ namespace UnityEngine.Rendering.PostProcessing
             return cameraProj;
         }
 
+        
         public void ConfigureJitteredProjectionMatrix(PostProcessRenderContext context)
         {
             var camera = context.camera;
@@ -131,6 +137,7 @@ namespace UnityEngine.Rendering.PostProcessing
         }
 
         // TODO: We'll probably need to isolate most of this for SRPs
+        
         public void ConfigureStereoJitteredProjectionMatrices(PostProcessRenderContext context)
         {
 #if  UNITY_2017_3_OR_NEWER
