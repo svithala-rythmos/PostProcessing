@@ -179,14 +179,18 @@ namespace UnityEngine.Rendering.PostProcessing
                 ///     </summary>
                         public int numberOfEyes { get; private set; }
 
-        /// <summary>
-        /// Available XR rendering modes.
-        /// </summary>
-        public enum StereoRenderingMode
+        ///     <summary>
+                ///     Available XR rendering modes.
+                ///     </summary>
+                        public enum StereoRenderingMode
         {
+            
             MultiPass = 0,
+            
             SinglePass,
+            
             SinglePassInstanced,
+            
             SinglePassMultiview
         }
 
