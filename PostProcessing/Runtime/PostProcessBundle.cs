@@ -3,9 +3,12 @@ using UnityEngine.Assertions;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
+    
     public sealed class PostProcessBundle
     {
+        
         public PostProcessAttribute attribute { get; private set; }
+        
         public PostProcessEffectSettings settings { get; private set; }
 
         internal PostProcessEffectRenderer renderer
