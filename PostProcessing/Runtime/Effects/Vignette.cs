@@ -2,20 +2,20 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// A list of available render modes for the Vignette effect.
-    /// </summary>
-    public enum VignetteMode
+    ///     <summary>
+        ///     A list of available render modes for the Vignette effect.
+        ///     </summary>
+            public enum VignetteMode
     {
-        /// <summary>
-        /// This mode offers parametric controls for the position, shape and intensity of the Vignette.
-        /// </summary>
-        Classic,
+        ///     <summary>
+                ///     This mode offers parametric controls for the position, shape and intensity of the Vignette.
+                ///     </summary>
+                        Classic,
 
-        /// <summary>
-        /// This mode multiplies a custom texture mask over the screen to create a Vignette effect.
-        /// </summary>
-        Masked
+        ///     <summary>
+                ///     This mode multiplies a custom texture mask over the screen to create a Vignette effect.
+                ///     </summary>
+                        Masked
     }
 
     ///     <summary>
