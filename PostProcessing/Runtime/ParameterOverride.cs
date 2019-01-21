@@ -179,17 +179,12 @@ namespace UnityEngine.Rendering.PostProcessing
 
     // Bypassing the limited unity serialization system...
 
-    /// <summary>
-    /// A <see cref="ParameterOverride{T}"/> that holds a <c>float</c> value.
-    /// </summary>
-    /// <remarks>
-    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>.
-    /// </remarks>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEngine.Rendering.PostProcessing.FloatParameter" -->
+            [Serializable]
     public sealed class FloatParameter : ParameterOverride<float>
     {
-        /// <inheritdoc />
-        public override void Interp(float from, float to, float t)
+        ///     <inheritdoc />
+                        public override void Interp(float from, float to, float t)
         {
             value = from + (to - from) * t;
         }
