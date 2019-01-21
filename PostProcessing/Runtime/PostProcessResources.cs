@@ -259,6 +259,7 @@ namespace UnityEngine.Rendering.PostProcessing
         
         
         
+        
         public delegate void ChangeHandler();
         
         public ChangeHandler changeHandler;
