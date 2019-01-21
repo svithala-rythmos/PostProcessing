@@ -1,10 +1,10 @@
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// A raw implementation of John Hable's artist-friendly tonemapping curve.
-    /// See http://filmicworlds.com/blog/filmic-tonemapping-with-piecewise-power-curves/
-    /// </summary>
-    public class HableCurve
+    ///     <summary>
+        ///     A raw implementation of John Hable's artist-friendly tonemapping curve.
+        ///     See http://filmicworlds.com/blog/filmic-tonemapping-with-piecewise-power-curves/
+        ///     </summary>
+            public class HableCurve
     {
         class Segment
         {
@@ -43,15 +43,15 @@ namespace UnityEngine.Rendering.PostProcessing
             internal float gamma;
         }
 
-        /// <summary>
-        /// The curve's white point.
-        /// </summary>
-        public float whitePoint { get; private set; }
+        ///     <summary>
+                ///     The curve's white point.
+                ///     </summary>
+                        public float whitePoint { get; private set; }
 
-        /// <summary>
-        /// The inverse of the curve's white point.
-        /// </summary>
-        public float inverseWhitePoint { get; private set; }
+        ///     <summary>
+                ///     The inverse of the curve's white point.
+                ///     </summary>
+                        public float inverseWhitePoint { get; private set; }
 
         internal float x0 { get; private set; }
         internal float x1 { get; private set; }
@@ -59,10 +59,10 @@ namespace UnityEngine.Rendering.PostProcessing
         // Toe, mid, shoulder
         readonly Segment[] m_Segments = new Segment[3];
 
-        /// <summary>
-        /// Creates a new curve.
-        /// </summary>
-        public HableCurve()
+        ///     <summary>
+                ///     Creates a new curve.
+                ///     </summary>
+                        public HableCurve()
         {
             for (int i = 0; i < 3; i++)
                 m_Segments[i] = new Segment();
@@ -70,12 +70,12 @@ namespace UnityEngine.Rendering.PostProcessing
             uniforms = new Uniforms(this);
         }
 
-        /// <summary>
-        /// Evaluates a given point on the curve.
-        /// </summary>
-        /// <param name="x">The point within the curve to evaluate (on the horizontal axis)</param>
-        /// <returns>The value of the curve, at the point specified</returns>
-        public float Eval(float x)
+        ///     <summary>
+                ///     Evaluates a given point on the curve.
+                ///     </summary>
+                ///     <param name="x">The point within the curve to evaluate (on the horizontal axis)</param>
+                ///     <returns>The value of the curve, at the point specified</returns>
+                        public float Eval(float x)
         {
             float normX = x * inverseWhitePoint;
             int index = (normX < x0) ? 0 : ((normX < x1) ? 1 : 2);
@@ -84,22 +84,22 @@ namespace UnityEngine.Rendering.PostProcessing
             return ret;
         }
 
-        /// <summary>
-        /// Initializes the curve with given settings.
-        /// </summary>
-        /// <param name="toeStrength">Affects the transition between the toe and the mid section of
-        /// the curve. A value of 0 means no toe, a value of 1 means a very hard transition</param>
-        /// <param name="toeLength">Affects how much of the dynamic range is in the toe. With a
-        /// small value, the toe will be very short and quickly transition into the linear section,
-        /// and with a longer value having a longer toe</param>
-        /// <param name="shoulderStrength">Affects the transition between the mid section and the
-        /// shoulder of the curve. A value of 0 means no shoulder, a value of 1 means a very hard
-        /// transition</param>
-        /// <param name="shoulderLength">Affects how many F-stops (EV) to add to the dynamic range
-        /// of the curve</param>
-        /// <param name="shoulderAngle">Affects how much overshoot to add to the shoulder</param>
-        /// <param name="gamma">Applies a gamma function to the curve</param>
-        public void Init(float toeStrength, float toeLength, float shoulderStrength, float shoulderLength, float shoulderAngle, float gamma)
+        ///     <summary>
+                ///     Initializes the curve with given settings.
+                ///     </summary>
+                ///     <param name="toeStrength">Affects the transition between the toe and the mid section of
+                ///     the curve. A value of 0 means no toe, a value of 1 means a very hard transition</param>
+                ///     <param name="toeLength">Affects how much of the dynamic range is in the toe. With a
+                ///     small value, the toe will be very short and quickly transition into the linear section,
+                ///     and with a longer value having a longer toe</param>
+                ///     <param name="shoulderStrength">Affects the transition between the mid section and the
+                ///     shoulder of the curve. A value of 0 means no shoulder, a value of 1 means a very hard
+                ///     transition</param>
+                ///     <param name="shoulderLength">Affects how many F-stops (EV) to add to the dynamic range
+                ///     of the curve</param>
+                ///     <param name="shoulderAngle">Affects how much overshoot to add to the shoulder</param>
+                ///     <param name="gamma">Applies a gamma function to the curve</param>
+                        public void Init(float toeStrength, float toeLength, float shoulderStrength, float shoulderLength, float shoulderAngle, float gamma)
         {
             var dstParams = new DirectParams();
 
@@ -372,9 +372,9 @@ namespace UnityEngine.Rendering.PostProcessing
             }
         }
 
-        /// <summary>
-        /// The builtin <see cref="Uniforms"/> instance for this curve.
-        /// </summary>
-        public readonly Uniforms uniforms;
+        ///     <summary>
+                ///     The builtin <see cref="Uniforms"/> instance for this curve.
+                ///     </summary>
+                        public readonly Uniforms uniforms;
     }
 }
