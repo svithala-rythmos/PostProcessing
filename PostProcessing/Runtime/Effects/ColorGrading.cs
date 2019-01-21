@@ -64,10 +64,10 @@ namespace UnityEngine.Rendering.PostProcessing
             [Serializable]
     public sealed class GradingModeParameter : ParameterOverride<GradingMode> { }
 
-    /// <summary>
-    /// A volume parameter holding a <see cref="Tonemapper"/> value.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     A volume parameter holding a <see cref="Tonemapper"/> value.
+        ///     </summary>
+            [Serializable]
     public sealed class TonemapperParameter : ParameterOverride<Tonemapper> {}
 
     ///     <summary>
