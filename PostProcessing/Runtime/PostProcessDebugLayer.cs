@@ -126,38 +126,38 @@ namespace UnityEngine.Rendering.PostProcessing
         /// <!-- Badly formed XML comment ignored for member "P:UnityEngine.Rendering.PostProcessing.PostProcessDebugLayer.debugOverlay" -->
                         public DebugOverlay debugOverlay { get; private set; }
 
-        /// <summary>
-        /// Debug overlay settings wrapper.
-        /// </summary>
-        [Serializable]
+        ///     <summary>
+                ///     Debug overlay settings wrapper.
+                ///     </summary>
+                        [Serializable]
         public class OverlaySettings
         {
-            /// <summary>
-            /// Should we remap depth to a linear range?
-            /// </summary>
-            public bool linearDepth = false;
+            ///     <summary>
+                        ///     Should we remap depth to a linear range?
+                        ///     </summary>
+                                    public bool linearDepth = false;
 
-            /// <summary>
-            /// The intensity of motion vector colors.
-            /// </summary>
-            [Range(0f, 16f)]
+            ///     <summary>
+                        ///     The intensity of motion vector colors.
+                        ///     </summary>
+                                    [Range(0f, 16f)]
             public float motionColorIntensity = 4f;
 
-            /// <summary>
-            /// The size of the motion vector grid.
-            /// </summary>
-            [Range(4, 128)]
+            ///     <summary>
+                        ///     The size of the motion vector grid.
+                        ///     </summary>
+                                    [Range(4, 128)]
             public int motionGridSize = 64;
 
-            /// <summary>
-            /// The color blindness type to simulate.
-            /// </summary>
-            public ColorBlindnessType colorBlindnessType = ColorBlindnessType.Deuteranopia;
+            ///     <summary>
+                        ///     The color blindness type to simulate.
+                        ///     </summary>
+                                    public ColorBlindnessType colorBlindnessType = ColorBlindnessType.Deuteranopia;
 
-            /// <summary>
-            /// The strength of the selected color blindness type.
-            /// </summary>
-            [Range(0f, 1f)]
+            ///     <summary>
+                        ///     The strength of the selected color blindness type.
+                        ///     </summary>
+                                    [Range(0f, 1f)]
             public float colorBlindnessStrength = 1f;
         }
 
