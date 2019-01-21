@@ -28,10 +28,10 @@ namespace UnityEngine.Rendering.PostProcessing
         VeryLarge
     }
 
-    /// <summary>
-    /// A volume parameter holding a <see cref="KernelSize"/> value.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     A volume parameter holding a <see cref="KernelSize"/> value.
+        ///     </summary>
+            [Serializable]
     public sealed class KernelSizeParameter : ParameterOverride<KernelSize> {}
 
     ///     <summary>
