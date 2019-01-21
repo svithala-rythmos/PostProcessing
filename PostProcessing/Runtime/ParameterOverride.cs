@@ -383,19 +383,20 @@ namespace UnityEngine.Rendering.PostProcessing
         Lut2D
     }
 
-    /// <summary>
-    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Texture"/> value.
-    /// </summary>
-    /// <remarks>
-    /// Texture interpolation is done using a classic linear interpolation method.
-    /// </remarks>
-    [Serializable]
+    ///     <summary>
+        ///     A <see cref="ParameterOverride{T}"/> that holds a <see cref="Texture"/> value.
+        ///     </summary>
+        ///     <remarks>
+        ///     Texture interpolation is done using a classic linear interpolation method.
+        ///     </remarks>
+            [Serializable]
     public sealed class TextureParameter : ParameterOverride<Texture>
     {
+        
         public TextureParameterDefault defaultState = TextureParameterDefault.Black;
         
-        /// <inheritdoc />
-        public override void Interp(Texture from, Texture to, float t)
+        ///     <inheritdoc />
+                        public override void Interp(Texture from, Texture to, float t)
         {
             // Both are null, do nothing
             if (from == null && to == null)
