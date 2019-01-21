@@ -524,38 +524,47 @@ namespace UnityEngine.Rendering.PostProcessing
         }
     }
 #else
+    
     [Serializable]
     public sealed class MultiScaleVO : IAmbientOcclusionMethod
     {
+        
         public MultiScaleVO(AmbientOcclusion settings)
         {
         }
 
+        
         public void SetResources(PostProcessResources resources)
         {
         }
 
+        
         public DepthTextureMode GetCameraFlags()
         {
             return DepthTextureMode.None;
         }
 
+        
         public void GenerateAOMap(CommandBuffer cmd, Camera camera, RenderTargetIdentifier destination, RenderTargetIdentifier? depthMap, bool invert, bool isMSAA)
         {
         }
 
+        
         public void RenderAfterOpaque(PostProcessRenderContext context)
         {
         }
 
+        
         public void RenderAmbientOnly(PostProcessRenderContext context)
         {
         }
 
+        
         public void CompositeAmbientOnly(PostProcessRenderContext context)
         {
         }
 
+        
         public void Release()
         {
         }
