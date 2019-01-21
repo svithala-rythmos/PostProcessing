@@ -24,69 +24,67 @@ namespace UnityEngine.Rendering.PostProcessing
     [Serializable]
     public sealed class VignetteModeParameter : ParameterOverride<VignetteMode> {}
 
-    /// <summary>
-    /// This class holds settings for the Vignette effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class holds settings for the Vignette effect.
+        ///     </summary>
+            [Serializable]
     [PostProcess(typeof(VignetteRenderer), "Unity/Vignette")]
     public sealed class Vignette : PostProcessEffectSettings
     {
-        /// <summary>
-        /// Use the \"Classic\" mode for parametric controls. Use the \"Masked\" mode to use your own texture mask.
-        /// </summary>
-        [Tooltip("Use the \"Classic\" mode for parametric controls. Use the \"Masked\" mode to use your own texture mask.")]
+        ///     <summary>
+                ///     Use the \"Classic\" mode for parametric controls. Use the \"Masked\" mode to use your own texture mask.
+                ///     </summary>
+                        [Tooltip("Use the \"Classic\" mode for parametric controls. Use the \"Masked\" mode to use your own texture mask.")]
         public VignetteModeParameter mode = new VignetteModeParameter { value = VignetteMode.Classic };
 
-        /// <summary>
-        /// The color to use to tint the vignette.
-        /// </summary>
-        [Tooltip("Vignette color.")]
+        ///     <summary>
+                ///     The color to use to tint the vignette.
+                ///     </summary>
+                        [Tooltip("Vignette color.")]
         public ColorParameter color = new ColorParameter { value = new Color(0f, 0f, 0f, 1f) };
 
-        /// <summary>
-        /// Sets the vignette center point (screen center is <c>[0.5,0.5]</c>).
-        /// </summary>
-        [Tooltip("Sets the vignette center point (screen center is [0.5, 0.5]).")]
+        /// <!-- Badly formed XML comment ignored for member "F:UnityEngine.Rendering.PostProcessing.Vignette.center" -->
+                        [Tooltip("Sets the vignette center point (screen center is [0.5, 0.5]).")]
         public Vector2Parameter center = new Vector2Parameter { value = new Vector2(0.5f, 0.5f) };
 
-        /// <summary>
-        /// The amount of vignetting on screen.
-        /// </summary>
-        [Range(0f, 1f), Tooltip("Amount of vignetting on screen.")]
+        ///     <summary>
+                ///     The amount of vignetting on screen.
+                ///     </summary>
+                        [Range(0f, 1f), Tooltip("Amount of vignetting on screen.")]
         public FloatParameter intensity = new FloatParameter { value = 0f };
 
-        /// <summary>
-        /// The smoothness of the vignette borders.
-        /// </summary>
-        [Range(0.01f, 1f), Tooltip("Smoothness of the vignette borders.")]
+        ///     <summary>
+                ///     The smoothness of the vignette borders.
+                ///     </summary>
+                        [Range(0.01f, 1f), Tooltip("Smoothness of the vignette borders.")]
         public FloatParameter smoothness = new FloatParameter { value = 0.2f };
 
-        /// <summary>
-        /// Lower values will make a square-ish vignette.
-        /// </summary>
-        [Range(0f, 1f), Tooltip("Lower values will make a square-ish vignette.")]
+        ///     <summary>
+                ///     Lower values will make a square-ish vignette.
+                ///     </summary>
+                        [Range(0f, 1f), Tooltip("Lower values will make a square-ish vignette.")]
         public FloatParameter roundness = new FloatParameter { value = 1f };
 
-        /// <summary>
-        /// Should the vignette be perfectly round or be dependent on the current aspect ratio?
-        /// </summary>
-        [Tooltip("Set to true to mark the vignette to be perfectly round. False will make its shape dependent on the current aspect ratio.")]
+        ///     <summary>
+                ///     Should the vignette be perfectly round or be dependent on the current aspect ratio?
+                ///     </summary>
+                        [Tooltip("Set to true to mark the vignette to be perfectly round. False will make its shape dependent on the current aspect ratio.")]
         public BoolParameter rounded = new BoolParameter { value = false };
 
-        /// <summary>
-        /// A black and white mask to use as a vignette.
-        /// </summary>
-        [Tooltip("A black and white mask to use as a vignette.")]
+        ///     <summary>
+                ///     A black and white mask to use as a vignette.
+                ///     </summary>
+                        [Tooltip("A black and white mask to use as a vignette.")]
         public TextureParameter mask = new TextureParameter { value = null };
 
-        /// <summary>
-        /// Mask opacity.
-        /// </summary>
-        [Range(0f, 1f), Tooltip("Mask opacity.")]
+        ///     <summary>
+                ///     Mask opacity.
+                ///     </summary>
+                        [Range(0f, 1f), Tooltip("Mask opacity.")]
         public FloatParameter opacity = new FloatParameter { value = 1f };
 
-        /// <inheritdoc />
-        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
+        ///     <inheritdoc />
+                        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
         {
             return enabled.value
                 && ((mode.value == VignetteMode.Classic && intensity.value > 0f)
