@@ -18,10 +18,10 @@ namespace UnityEngine.Rendering.PostProcessing
         Masked
     }
 
-    /// <summary>
-    /// A volume parameter holding a <see cref="VignetteMode"/> value.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     A volume parameter holding a <see cref="VignetteMode"/> value.
+        ///     </summary>
+            [Serializable]
     public sealed class VignetteModeParameter : ParameterOverride<VignetteMode> {}
 
     ///     <summary>
