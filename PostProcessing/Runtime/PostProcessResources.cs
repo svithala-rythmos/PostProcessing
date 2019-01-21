@@ -2,12 +2,12 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This asset is used to store references to shaders and other resources we might need at
-    /// runtime without having to use a `Resources` folder. This allows for better memory management,
-    /// better dependency tracking and better interoperability with asset bundles.
-    /// </summary>
-    public sealed class PostProcessResources : ScriptableObject
+    ///     <summary>
+    ///     This asset is used to store references to shaders and other resources we might need at
+    ///     runtime without having to use a `Resources` folder. This allows for better memory management,
+    ///     better dependency tracking and better interoperability with asset bundles.
+    ///     </summary>
+        public sealed class PostProcessResources : ScriptableObject
     {
         [Serializable]
         public sealed class Shaders
@@ -72,14 +72,20 @@ namespace UnityEngine.Rendering.PostProcessing
             public Texture2D search;
         }
 
+        
         public Texture2D[] blueNoise64;
+        
         public Texture2D[] blueNoise256;
+        
         public SMAALuts smaaLuts;
+        
         public Shaders shaders;
+        
         public ComputeShaders computeShaders;
 
 #if UNITY_EDITOR
         public delegate void ChangeHandler();
+        
         public ChangeHandler changeHandler;
 
         void OnValidate()
