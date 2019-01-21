@@ -4,13 +4,13 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace UnityEditor.Rendering.PostProcessing
 {
-    /// <summary>
-    /// The base class for all post-processing effect related editors. If you want to customize the
-    /// look of a custom post-processing effect, inherit from <see cref="PostProcessEffectEditor{T}"/>
-    /// instead.
-    /// </summary>
-    /// <seealso cref="PostProcessEffectEditor{T}"/>
-    public class PostProcessEffectBaseEditor
+    ///     <summary>
+        ///     The base class for all post-processing effect related editors. If you want to customize the
+        ///     look of a custom post-processing effect, inherit from <see cref="PostProcessEffectEditor{T}"/>
+        ///     instead.
+        ///     </summary>
+        ///     <seealso cref="T:UnityEditor.Rendering.PostProcessing.PostProcessEffectEditor`1"/>
+            public class PostProcessEffectBaseEditor
     {
         internal PostProcessEffectSettings target { get; private set; }
         internal SerializedObject serializedObject { get; private set; }
@@ -25,10 +25,10 @@ namespace UnityEditor.Rendering.PostProcessing
         {
         }
 
-        /// <summary>
-        /// Repaints the inspector.
-        /// </summary>
-        public void Repaint()
+        ///     <summary>
+                ///     Repaints the inspector.
+                ///     </summary>
+                        public void Repaint()
         {
             m_Inspector.Repaint();
         }
@@ -43,17 +43,17 @@ namespace UnityEditor.Rendering.PostProcessing
             OnEnable();
         }
 
-        /// <summary>
-        /// Called when the editor is initialized.
-        /// </summary>
-        public virtual void OnEnable()
+        ///     <summary>
+                ///     Called when the editor is initialized.
+                ///     </summary>
+                        public virtual void OnEnable()
         {
         }
 
-        /// <summary>
-        /// Called when the editor is de-initialized.
-        /// </summary>
-        public virtual void OnDisable()
+        ///     <summary>
+                ///     Called when the editor is de-initialized.
+                ///     </summary>
+                        public virtual void OnDisable()
         {
         }
 
@@ -66,20 +66,20 @@ namespace UnityEditor.Rendering.PostProcessing
             serializedObject.ApplyModifiedProperties();
         }
 
-        /// <summary>
-        /// Called every time the inspector is being redrawn. This is where you should add your UI
-        /// drawing code.
-        /// </summary>
-        public virtual void OnInspectorGUI()
+        ///     <summary>
+                ///     Called every time the inspector is being redrawn. This is where you should add your UI
+                ///     drawing code.
+                ///     </summary>
+                        public virtual void OnInspectorGUI()
         {
         }
 
-        /// <summary>
-        /// Returns the label to use as the effect title. You can override this to return a custom
-        /// label, else it will use the effect type as the title.
-        /// </summary>
-        /// <returns>The label to use as the effect title</returns>
-        public virtual string GetDisplayTitle()
+        ///     <summary>
+                ///     Returns the label to use as the effect title. You can override this to return a custom
+                ///     label, else it will use the effect type as the title.
+                ///     </summary>
+                ///     <returns>The label to use as the effect title</returns>
+                        public virtual string GetDisplayTitle()
         {
             return ObjectNames.NicifyVariableName(target.GetType().Name);
         }
@@ -110,22 +110,22 @@ namespace UnityEditor.Rendering.PostProcessing
             serializedObject.Update();
         }
 
-        /// <summary>
-        /// Draws a property UI element.
-        /// </summary>
-        /// <param name="property">The property to draw</param>
-        protected void PropertyField(SerializedParameterOverride property)
+        ///     <summary>
+                ///     Draws a property UI element.
+                ///     </summary>
+                ///     <param name="property">The property to draw</param>
+                        protected void PropertyField(SerializedParameterOverride property)
         {
             var title = EditorUtilities.GetContent(property.displayName);
             PropertyField(property, title);
         }
 
-        /// <summary>
-        /// Draws a property UI element with a custom title and/or tooltip.
-        /// </summary>
-        /// <param name="property">The property to draw</param>
-        /// <param name="title">A custom title and/or tooltip</param>
-        protected void PropertyField(SerializedParameterOverride property, GUIContent title)
+        ///     <summary>
+                ///     Draws a property UI element with a custom title and/or tooltip.
+                ///     </summary>
+                ///     <param name="property">The property to draw</param>
+                ///     <param name="title">A custom title and/or tooltip</param>
+                        protected void PropertyField(SerializedParameterOverride property, GUIContent title)
         {
             // Check for DisplayNameAttribute first
             var displayNameAttr = property.GetAttribute<DisplayNameAttribute>();
