@@ -2,23 +2,23 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// Ambient occlusion modes.
-    /// </summary>
-    public enum AmbientOcclusionMode
+    ///     <summary>
+        ///     Ambient occlusion modes.
+        ///     </summary>
+            public enum AmbientOcclusionMode
     {
-        /// <summary>
-        /// A standard implementation of ambient obscurance that works on non modern platforms. If
-        /// you target a compute-enabled platform we recommend that you use
-        /// <see cref="MultiScaleVolumetricObscurance"/> instead.
-        /// </summary>
-        ScalableAmbientObscurance,
+        ///     <summary>
+                ///     A standard implementation of ambient obscurance that works on non modern platforms. If
+                ///     you target a compute-enabled platform we recommend that you use
+                ///     <see cref="MultiScaleVolumetricObscurance"/> instead.
+                ///     </summary>
+                        ScalableAmbientObscurance,
 
-        /// <summary>
-        /// A modern version of ambient occlusion heavily optimized for consoles and desktop
-        /// platforms.
-        /// </summary>
-        MultiScaleVolumetricObscurance
+        ///     <summary>
+                ///     A modern version of ambient occlusion heavily optimized for consoles and desktop
+                ///     platforms.
+                ///     </summary>
+                        MultiScaleVolumetricObscurance
     }
 
     ///     <summary>
