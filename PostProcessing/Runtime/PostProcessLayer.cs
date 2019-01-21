@@ -116,15 +116,18 @@ namespace UnityEngine.Rendering.PostProcessing
         // These are automatically populated and made to work properly with the serialization
         // system AND the editor. Modify at your own risk.
         
+        
         [Serializable]
         public sealed class SerializedBundleRef
         {
             // We can't serialize Type so use assemblyQualifiedName instead, we only need this at
             // init time anyway so it's fine
             
+            
             public string assemblyQualifiedName;
 
             // Not serialized, is set/reset when deserialization kicks in
+            
             
             public PostProcessBundle bundle;
         }
