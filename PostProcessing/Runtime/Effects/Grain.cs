@@ -2,39 +2,37 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class holds settings for the Grain effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class holds settings for the Grain effect.
+        ///     </summary>
+            [Serializable]
     [PostProcess(typeof(GrainRenderer), "Unity/Grain")]
     public sealed class Grain : PostProcessEffectSettings
     {
-        /// <summary>
-        /// Set to <c>true</c> to render colored grain, <c>false</c> for grayscale grain.
-        /// </summary>
-        [Tooltip("Enable the use of colored grain.")]
+        /// <!-- Badly formed XML comment ignored for member "F:UnityEngine.Rendering.PostProcessing.Grain.colored" -->
+                        [Tooltip("Enable the use of colored grain.")]
         public BoolParameter colored = new BoolParameter { value = true };
 
-        /// <summary>
-        /// The strength (or visibility) of the Grain effect on screen. Higher values mean more visible grain.
-        /// </summary>
-        [Range(0f, 1f), Tooltip("Grain strength. Higher values mean more visible grain.")]
+        ///     <summary>
+                ///     The strength (or visibility) of the Grain effect on screen. Higher values mean more visible grain.
+                ///     </summary>
+                        [Range(0f, 1f), Tooltip("Grain strength. Higher values mean more visible grain.")]
         public FloatParameter intensity = new FloatParameter { value = 0f };
 
-        /// <summary>
-        /// The size of grain particle on screen.
-        /// </summary>
-        [Range(0.3f, 3f), Tooltip("Grain particle size.")]
+        ///     <summary>
+                ///     The size of grain particle on screen.
+                ///     </summary>
+                        [Range(0.3f, 3f), Tooltip("Grain particle size.")]
         public FloatParameter size = new FloatParameter { value = 1f };
 
-        /// <summary>
-        /// Controls the noisiness response curve based on scene luminance. Lower values mean less noise in dark areas.
-        /// </summary>
-        [Range(0f, 1f), DisplayName("Luminance Contribution"), Tooltip("Controls the noise response curve based on scene luminance. Lower values mean less noise in dark areas.")]
+        ///     <summary>
+                ///     Controls the noisiness response curve based on scene luminance. Lower values mean less noise in dark areas.
+                ///     </summary>
+                        [Range(0f, 1f), DisplayName("Luminance Contribution"), Tooltip("Controls the noise response curve based on scene luminance. Lower values mean less noise in dark areas.")]
         public FloatParameter lumContrib = new FloatParameter { value = 0.8f };
         
-        /// <inheritdoc />
-        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
+        ///     <inheritdoc />
+                        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
         {
             return enabled.value
                 && intensity.value > 0f;
