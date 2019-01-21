@@ -2,31 +2,31 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// The base abstract class for all parameter override types.
-    /// </summary>
-    /// <seealso cref="ParameterOverride{T}"/>
-    public abstract class ParameterOverride
+    ///     <summary>
+        ///     The base abstract class for all parameter override types.
+        ///     </summary>
+        ///     <seealso cref="T:UnityEngine.Rendering.PostProcessing.ParameterOverride`1"/>
+            public abstract class ParameterOverride
     {
-        /// <summary>
-        /// The override state of this parameter.
-        /// </summary>
-        public bool overrideState;
+        ///     <summary>
+                ///     The override state of this parameter.
+                ///     </summary>
+                        public bool overrideState;
 
         internal abstract void Interp(ParameterOverride from, ParameterOverride to, float t);
 
-        /// <summary>
-        /// Returns the computed hash code for this parameter.
-        /// </summary>
-        /// <returns>A computed hash code</returns>
-        public abstract int GetHash();
+        ///     <summary>
+                ///     Returns the computed hash code for this parameter.
+                ///     </summary>
+                ///     <returns>A computed hash code</returns>
+                        public abstract int GetHash();
 
-        /// <summary>
-        /// Casts and returns the value stored in this parameter.
-        /// </summary>
-        /// <typeparam name="T">The type to cast to</typeparam>
-        /// <returns>The value stored in this parameter</returns>
-        public T GetValue<T>()
+        ///     <summary>
+                ///     Casts and returns the value stored in this parameter.
+                ///     </summary>
+                ///     <typeparam name="T">The type to cast to</typeparam>
+                ///     <returns>The value stored in this parameter</returns>
+                        public T GetValue<T>()
         {
             return ((ParameterOverride<T>)this).value;
         }
