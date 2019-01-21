@@ -12,9 +12,11 @@ namespace UnityEngine.Rendering.PostProcessing
         
         
         
+        
         [Serializable]
         public sealed class Shaders
         {
+            
             
             
             
@@ -22,7 +24,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader copy;
+            
             
             
             
@@ -30,7 +34,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader copyStdFromTexArray;
+            
             
             
             
@@ -38,7 +44,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader discardAlpha;
+            
             
             
             
@@ -46,7 +54,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader finalPass;
+            
             
             
             
@@ -54,7 +64,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader motionBlur;
+            
             
             
             
@@ -62,7 +74,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader subpixelMorphologicalAntialiasing;
+            
             
             
             
@@ -70,7 +84,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader uber;
+            
             
             
             
@@ -78,7 +94,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader lightMeter;
+            
             
             
             
@@ -86,7 +104,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader waveform;
+            
             
             
             
@@ -94,7 +114,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader debugOverlays;
+            
             
             
             
@@ -102,7 +124,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader scalableAO;
+            
             
             
             
@@ -110,8 +134,10 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public Shader screenSpaceReflections;
 
+            
             
             
             
