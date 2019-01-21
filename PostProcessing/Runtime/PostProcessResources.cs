@@ -124,9 +124,11 @@ namespace UnityEngine.Rendering.PostProcessing
         
         
         
+        
         [Serializable]
         public sealed class ComputeShaders
         {
+            
             
             
             
@@ -134,7 +136,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public ComputeShader exposureHistogram;
+            
             
             
             
@@ -142,7 +146,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public ComputeShader texture3dLerp;
+            
             
             
             
@@ -150,7 +156,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public ComputeShader waveform;
+            
             
             
             
@@ -158,7 +166,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public ComputeShader multiScaleAODownsample1;
+            
             
             
             
@@ -166,7 +176,9 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public ComputeShader multiScaleAORender;
+            
             
             
             
@@ -174,8 +186,10 @@ namespace UnityEngine.Rendering.PostProcessing
             
             
             
+            
             public ComputeShader gaussianDownsample;
 
+            
             
             
             
