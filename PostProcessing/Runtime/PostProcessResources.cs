@@ -228,13 +228,16 @@ namespace UnityEngine.Rendering.PostProcessing
         
         
         
+        
         [Serializable]
         public sealed class SMAALuts
         {
             
             
             
+            
             public Texture2D area;
+            
             
             
             
