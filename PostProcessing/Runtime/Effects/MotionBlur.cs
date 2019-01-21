@@ -2,28 +2,28 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class holds settings for the Motion Blur effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+    ///     This class holds settings for the Motion Blur effect.
+    ///     </summary>
+        [Serializable]
     [PostProcess(typeof(MotionBlurRenderer), "Unity/Motion Blur", false)]
     public sealed class MotionBlur : PostProcessEffectSettings
     {
-        /// <summary>
-        /// The angle of the rotary shutter. Larger values give longer exposure therefore a stronger
-        /// blur effect.
-        /// </summary>
-        [Range(0f, 360f), Tooltip("The angle of rotary shutter. Larger values give longer exposure.")]
+        ///     <summary>
+                ///     The angle of the rotary shutter. Larger values give longer exposure therefore a stronger
+                ///     blur effect.
+                ///     </summary>
+                        [Range(0f, 360f), Tooltip("The angle of rotary shutter. Larger values give longer exposure.")]
         public FloatParameter shutterAngle = new FloatParameter { value = 270f };
 
-        /// <summary>
-        /// The amount of sample points, which affects quality and performances.
-        /// </summary>
-        [Range(4, 32), Tooltip("The amount of sample points. This affects quality and performance.")]
+        ///     <summary>
+                ///     The amount of sample points, which affects quality and performances.
+                ///     </summary>
+                        [Range(4, 32), Tooltip("The amount of sample points. This affects quality and performance.")]
         public IntParameter sampleCount = new IntParameter { value = 10 };
 
-        /// <inheritdoc />
-        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
+        ///     <inheritdoc />
+                public override bool IsEnabledAndSupported(PostProcessRenderContext context)
         {
             return enabled.value
                 && shutterAngle.value > 0f
