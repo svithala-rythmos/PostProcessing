@@ -2,10 +2,10 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class holds settings for the Subpixel Morphological Anti-aliasing (SMAA) effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class holds settings for the Subpixel Morphological Anti-aliasing (SMAA) effect.
+        ///     </summary>
+            [Serializable]
     public sealed class SubpixelMorphologicalAntialiasing
     {
         enum Pass
@@ -36,17 +36,14 @@ namespace UnityEngine.Rendering.PostProcessing
             High = 2
         }
 
-        /// <summary>
-        /// The quality preset to use for the anti-aliasing filter.
-        /// </summary>
-        [Tooltip("Lower quality is faster at the expense of visual quality (Low = ~60%, Medium = ~80%).")]
+        ///     <summary>
+                ///     The quality preset to use for the anti-aliasing filter.
+                ///     </summary>
+                        [Tooltip("Lower quality is faster at the expense of visual quality (Low = ~60%, Medium = ~80%).")]
         public Quality quality = Quality.High;
 
-        /// <summary>
-        /// Checks if the effect is supported on the target platform.
-        /// </summary>
-        /// <returns><c>true</c> if the anti-aliasing filter is supported, <c>false</c> otherwise</returns>
-        public bool IsSupported()
+        /// <!-- Badly formed XML comment ignored for member "M:UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing.IsSupported" -->
+                        public bool IsSupported()
         {
             return !RuntimeUtilities.isSinglePassStereoEnabled;
         }
