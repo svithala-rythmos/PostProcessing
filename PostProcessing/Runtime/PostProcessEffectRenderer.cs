@@ -55,17 +55,17 @@ namespace UnityEngine.Rendering.PostProcessing
         internal abstract void SetSettings(PostProcessEffectSettings settings);
     }
 
-    /// <summary>
-    /// The base abstract class for all effect renderer types.
-    /// </summary>
-    /// <typeparam name="T">The associated type of settings for this renderer</typeparam>
-    public abstract class PostProcessEffectRenderer<T> : PostProcessEffectRenderer
+    ///     <summary>
+        ///     The base abstract class for all effect renderer types.
+        ///     </summary>
+        ///     <typeparam name="T">The associated type of settings for this renderer</typeparam>
+            public abstract class PostProcessEffectRenderer<T> : PostProcessEffectRenderer
         where T : PostProcessEffectSettings
     {
-        /// <summary>
-        /// The current state of the effect settings associated with this renderer.
-        /// </summary>
-        public T settings { get; internal set; }
+        ///     <summary>
+                ///     The current state of the effect settings associated with this renderer.
+                ///     </summary>
+                        public T settings { get; internal set; }
 
         internal override void SetSettings(PostProcessEffectSettings settings)
         {
