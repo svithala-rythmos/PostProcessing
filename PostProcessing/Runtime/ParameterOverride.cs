@@ -68,7 +68,7 @@ namespace UnityEngine.Rendering.PostProcessing
     /// This sample code shows how to make a custom parameter holding a <c>float</c>.
     /// <code>
     /// [Serializable]
-    /// public sealed class FloatParameter : ParameterOverride&lt;float&gt;
+    /// public sealed class FloatParameter : ParameterOverride<float>
     /// {
     ///     public override void Interp(float from, float to, float t)
     ///     {
@@ -214,10 +214,8 @@ namespace UnityEngine.Rendering.PostProcessing
         }
     }
 
-    /// <summary>
-    /// A <see cref="ParameterOverride{T}"/> that holds a <c>bool</c> value.
-    /// </summary>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEngine.Rendering.PostProcessing.BoolParameter" -->
+            [Serializable]
     public sealed class BoolParameter : ParameterOverride<bool> {}
 
     /// <summary>
