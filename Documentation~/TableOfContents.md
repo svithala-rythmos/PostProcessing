@@ -1,5 +1,6 @@
-Unity Manual ToC
+Unity Manual TOC
 ================
+
  - [Home](index.md)
  - [Installation](Installation.md)
  - [Quick-start](Quick-Start.md)
