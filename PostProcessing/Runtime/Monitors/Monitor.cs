@@ -8,12 +8,15 @@ namespace UnityEngine.Rendering.PostProcessing
         Vectorscope
     }
 
+    
     public abstract class Monitor
     {
+        
         public RenderTexture output { get; protected set; }
 
         internal bool requested = false;
 
+        
         public bool IsRequestedAndSupported(PostProcessRenderContext context)
         {
             return requested
@@ -29,6 +32,7 @@ namespace UnityEngine.Rendering.PostProcessing
             return false;
         }
 
+        
         protected void CheckOutput(int width, int height)
         {
             if (output == null || !output.IsCreated() || output.width != width || output.height != height)
