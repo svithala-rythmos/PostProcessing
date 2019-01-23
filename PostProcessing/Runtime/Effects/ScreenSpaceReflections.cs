@@ -32,10 +32,10 @@ namespace UnityEngine.Rendering.PostProcessing
         Supersampled
     }
 
-    /// <summary>
-    /// A volume parameter holding a <see cref="ScreenSpaceReflectionPreset"/> value.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     A volume parameter holding a <see cref="ScreenSpaceReflectionPreset"/> value.
+        ///     </summary>
+            [Serializable]
     public sealed class ScreenSpaceReflectionPresetParameter : ParameterOverride<ScreenSpaceReflectionPreset> { }
 
     /// <summary>
