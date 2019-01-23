@@ -58,10 +58,10 @@ namespace UnityEngine.Rendering.PostProcessing
         Custom
     }
 
-    /// <summary>
-    /// A volume parameter holding a <see cref="GradingMode"/> value.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     A volume parameter holding a <see cref="GradingMode"/> value.
+        ///     </summary>
+            [Serializable]
     public sealed class GradingModeParameter : ParameterOverride<GradingMode> { }
 
     /// <summary>
