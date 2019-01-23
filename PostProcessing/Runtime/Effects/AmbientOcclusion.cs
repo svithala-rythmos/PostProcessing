@@ -64,99 +64,99 @@ namespace UnityEngine.Rendering.PostProcessing
     [Serializable]
     public sealed class AmbientOcclusionQualityParameter : ParameterOverride<AmbientOcclusionQuality> {}
 
-    /// <summary>
-    /// This class holds settings for the Ambient Occlusion effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+    ///     This class holds settings for the Ambient Occlusion effect.
+    ///     </summary>
+        [Serializable]
     [PostProcess(typeof(AmbientOcclusionRenderer), "Unity/Ambient Occlusion")]
     public sealed class AmbientOcclusion : PostProcessEffectSettings
     {
         // Shared parameters
 
-        /// <summary>
-        /// The ambient occlusion method to use.
-        /// </summary>
-        [Tooltip("The ambient occlusion method to use. \"Multi Scale Volumetric Obscurance\" is higher quality and faster on desktop & console platforms but requires compute shader support.")]
+        ///     <summary>
+                ///     The ambient occlusion method to use.
+                ///     </summary>
+                        [Tooltip("The ambient occlusion method to use. \"Multi Scale Volumetric Obscurance\" is higher quality and faster on desktop & console platforms but requires compute shader support.")]
         
         public AmbientOcclusionModeParameter mode = new AmbientOcclusionModeParameter { value = AmbientOcclusionMode.MultiScaleVolumetricObscurance };
 
-        /// <summary>
-        /// The degree of darkness added by ambient occlusion.
-        /// </summary>
-        [Range(0f, 4f), Tooltip("The degree of darkness added by ambient occlusion. Higher values produce darker areas.")]
+        ///     <summary>
+                ///     The degree of darkness added by ambient occlusion.
+                ///     </summary>
+                        [Range(0f, 4f), Tooltip("The degree of darkness added by ambient occlusion. Higher values produce darker areas.")]
         public FloatParameter intensity = new FloatParameter { value = 0f };
 
-        /// <summary>
-        /// A custom color to use for the ambient occlusion.
-        /// </summary>
-        [ColorUsage(false), Tooltip("The custom color to use for the ambient occlusion. The default is black.")]
+        ///     <summary>
+                ///     A custom color to use for the ambient occlusion.
+                ///     </summary>
+                        [ColorUsage(false), Tooltip("The custom color to use for the ambient occlusion. The default is black.")]
         
         public ColorParameter color = new ColorParameter { value = Color.black };
 
-        /// <summary>
-        /// Only affects ambient lighting. This mode is only available with the Deferred rendering
-        /// path and HDR rendering. Objects rendered with the Forward rendering path won't get any
-        /// ambient occlusion.
-        /// </summary>
-        [Tooltip("Check this box to mark this Volume as to only affect ambient lighting. This mode is only available with the Deferred rendering path and HDR rendering. Objects rendered with the Forward rendering path won't get any ambient occlusion.")]
+        ///     <summary>
+                ///     Only affects ambient lighting. This mode is only available with the Deferred rendering
+                ///     path and HDR rendering. Objects rendered with the Forward rendering path won't get any
+                ///     ambient occlusion.
+                ///     </summary>
+                        [Tooltip("Check this box to mark this Volume as to only affect ambient lighting. This mode is only available with the Deferred rendering path and HDR rendering. Objects rendered with the Forward rendering path won't get any ambient occlusion.")]
         public BoolParameter ambientOnly = new BoolParameter { value = true };
 
         // MSVO-only parameters
 
-        /// <summary>
-        /// The tolerance of the noise filter to changes in the depth pyramid.
-        /// </summary>
-        [Range(-8f, 0f)]
+        ///     <summary>
+                ///     The tolerance of the noise filter to changes in the depth pyramid.
+                ///     </summary>
+                        [Range(-8f, 0f)]
         public FloatParameter noiseFilterTolerance = new FloatParameter { value = 0f }; // Hidden
 
-        /// <summary>
-        /// The tolerance of the bilateral blur filter to depth changes.
-        /// </summary>
-        [Range(-8f, -1f)]
+        ///     <summary>
+                ///     The tolerance of the bilateral blur filter to depth changes.
+                ///     </summary>
+                        [Range(-8f, -1f)]
         public FloatParameter blurTolerance = new FloatParameter { value = -4.6f }; // Hidden
 
-        /// <summary>
-        /// The tolerance of the upsampling pass to depth changes.
-        /// </summary>
-        [Range(-12f, -1f)]
+        ///     <summary>
+                ///     The tolerance of the upsampling pass to depth changes.
+                ///     </summary>
+                        [Range(-12f, -1f)]
         public FloatParameter upsampleTolerance = new FloatParameter { value = -12f }; // Hidden
 
-        /// <summary>
-        /// Modifies the thickness of occluders. This increases dark areas but also introduces dark
-        /// halo around objects.
-        /// </summary>
-        [Range(1f, 10f), Tooltip("This modifies the thickness of occluders. It increases the size of dark areas and also introduces a dark halo around objects.")]
+        ///     <summary>
+                ///     Modifies the thickness of occluders. This increases dark areas but also introduces dark
+                ///     halo around objects.
+                ///     </summary>
+                        [Range(1f, 10f), Tooltip("This modifies the thickness of occluders. It increases the size of dark areas and also introduces a dark halo around objects.")]
         public FloatParameter thicknessModifier = new FloatParameter { value = 1f };
 
         // HDRP-only parameters
 
-        /// <summary>
-        /// Modifies he influence of direct lighting on ambient occlusion. This is only used in the
-        /// HD Render Pipeline currently.
-        /// </summary>
-        [Range(0f, 1f), Tooltip("Modifies the influence of direct lighting on ambient occlusion.")]
+        ///     <summary>
+                ///     Modifies he influence of direct lighting on ambient occlusion. This is only used in the
+                ///     HD Render Pipeline currently.
+                ///     </summary>
+                        [Range(0f, 1f), Tooltip("Modifies the influence of direct lighting on ambient occlusion.")]
         public FloatParameter directLightingStrength = new FloatParameter { value = 0f };
 
         // SAO-only parameters
-        /// <summary>
-        /// Radius of sample points, which affects extent of darkened areas.
-        /// </summary>
-        [Tooltip("The radius of sample points. This affects the size of darkened areas.")]
+        ///     <summary>
+                ///     Radius of sample points, which affects extent of darkened areas.
+                ///     </summary>
+                        [Tooltip("The radius of sample points. This affects the size of darkened areas.")]
         public FloatParameter radius = new FloatParameter { value = 0.25f };
 
-        /// <summary>
-        /// The number of sample points, which affects quality and performance. Lowest, Low & Medium
-        /// passes are downsampled. High and Ultra are not and should only be used on high-end
-        /// hardware.
-        /// </summary>
-        [Tooltip("The number of sample points. This affects both quality and performance. For \"Lowest\", \"Low\", and \"Medium\", passes are downsampled. For \"High\" and \"Ultra\", they are not and therefore you should only \"High\" and \"Ultra\" on high-end hardware.")]
+        ///     <summary>
+                ///     The number of sample points, which affects quality and performance. Lowest, Low & Medium
+                ///     passes are downsampled. High and Ultra are not and should only be used on high-end
+                ///     hardware.
+                ///     </summary>
+                        [Tooltip("The number of sample points. This affects both quality and performance. For \"Lowest\", \"Low\", and \"Medium\", passes are downsampled. For \"High\" and \"Ultra\", they are not and therefore you should only \"High\" and \"Ultra\" on high-end hardware.")]
         public AmbientOcclusionQualityParameter quality = new AmbientOcclusionQualityParameter { value = AmbientOcclusionQuality.Medium };
 
         // SRPs can call this method without a context set (see HDRP).
         // We need a better way to handle this than checking for a null context, context should
         // never be null.
-        /// <inheritdoc />
-        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
+        ///     <inheritdoc />
+                public override bool IsEnabledAndSupported(PostProcessRenderContext context)
         {
             bool state = enabled.value
                 && intensity.value > 0f;
