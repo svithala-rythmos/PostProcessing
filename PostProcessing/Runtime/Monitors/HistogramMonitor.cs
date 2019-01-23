@@ -2,10 +2,10 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class holds settings for the Histogram monitor.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class holds settings for the Histogram monitor.
+        ///     </summary>
+            [Serializable]
     public sealed class HistogramMonitor : Monitor
     {
         /// <summary>
@@ -34,20 +34,20 @@ namespace UnityEngine.Rendering.PostProcessing
             Master
         }
 
-        /// <summary>
-        /// The width of the rendered histogram.
-        /// </summary>
-        public int width = 512;
+        ///     <summary>
+                ///     The width of the rendered histogram.
+                ///     </summary>
+                        public int width = 512;
 
-        /// <summary>
-        /// The height of the rendered histogram.
-        /// </summary>
-        public int height = 256;
+        ///     <summary>
+                ///     The height of the rendered histogram.
+                ///     </summary>
+                        public int height = 256;
 
-        /// <summary>
-        /// The channel to render.
-        /// </summary>
-        public Channel channel = Channel.Master;
+        ///     <summary>
+                ///     The channel to render.
+                ///     </summary>
+                        public Channel channel = Channel.Master;
 
         ComputeBuffer m_Data;
         const int k_NumBins = 256;
