@@ -3,12 +3,20 @@ using UnityEngine.Assertions;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// Screen-space Reflections quality presets.
-    /// </summary>
-    public enum ScreenSpaceReflectionPreset
+    ///     <summary>
+        ///     Screen-space Reflections quality presets.
+        ///     </summary>
+            public enum ScreenSpaceReflectionPreset
     {
-        Lower, Low, Medium, High, Higher, Ultra, Overkill, Custom
+        
+        Lower, 
+Low, 
+Medium, 
+High, 
+Higher, 
+Ultra, 
+Overkill, 
+Custom
     }
 
     ///     <summary>
