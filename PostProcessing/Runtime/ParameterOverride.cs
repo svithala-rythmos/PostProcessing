@@ -55,61 +55,29 @@ namespace UnityEngine.Rendering.PostProcessing
         internal abstract void SetValue(ParameterOverride parameter);
     }
 
-    /// <summary>
-    /// The base typed class for all parameter override types.
-    /// </summary>
-    /// <typeparam name="T">The type of value to store in this <c>ParameterOverride</c></typeparam>
-    /// <remarks>
-    /// Due to limitations with the serialization system in Unity you shouldn't use this class
-    /// directly. Use one of the pre-flatten types (like <see cref="FloatParameter"/> or make your
-    /// own by extending this class.
-    /// </remarks>
-    /// <example>
-    /// This sample code shows how to make a custom parameter holding a <c>float</c>.
-    /// <code>
-    /// [Serializable]
-    /// public sealed class FloatParameter : ParameterOverride<float>
-    /// {
-    ///     public override void Interp(float from, float to, float t)
-    ///     {
-    ///         value = from + (to - from) * t;
-    ///     }
-    /// }
-    /// </code>
-    /// </example>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEngine.Rendering.PostProcessing.ParameterOverride`1" -->
+            [Serializable]
     public class ParameterOverride<T> : ParameterOverride
     {
-        /// <summary>
-        /// The value stored in this parameter.
-        /// </summary>
-        public T value;
+        ///     <summary>
+                ///     The value stored in this parameter.
+                ///     </summary>
+                        public T value;
 
-        /// <summary>
-        /// Creates a <c>ParameterOverride</c> with a default <see cref="value"/> and
-        /// <see cref="ParameterOverride.overrideState"/> set to <c>false</c>.
-        /// </summary>
-        public ParameterOverride()
+        /// <!-- Badly formed XML comment ignored for member "M:UnityEngine.Rendering.PostProcessing.ParameterOverride`1.#ctor" -->
+                        public ParameterOverride()
             : this(default(T), false)
         {
         }
 
-        /// <summary>
-        /// Creates a <c>ParameterOverride</c> with a given value and
-        /// <see cref="ParameterOverride.overrideState"/> set to <c>false</c>.
-        /// </summary>
-        /// <param name="value">The value to set this parameter to</param>
-        public ParameterOverride(T value)
+        /// <!-- Badly formed XML comment ignored for member "M:UnityEngine.Rendering.PostProcessing.ParameterOverride`1.#ctor(`0)" -->
+                        public ParameterOverride(T value)
             : this(value, false)
         {
         }
 
-        /// <summary>
-        /// Creates a <c>ParameterOverride</c> with a given value and override state.
-        /// </summary>
-        /// <param name="value">The value to set this parameter to</param>
-        /// <param name="overrideState">The override state for this value</param>
-        public ParameterOverride(T value, bool overrideState)
+        /// <!-- Badly formed XML comment ignored for member "M:UnityEngine.Rendering.PostProcessing.ParameterOverride`1.#ctor(`0,System.Boolean)" -->
+                        public ParameterOverride(T value, bool overrideState)
         {
             this.value = value;
             this.overrideState = overrideState;
@@ -121,30 +89,16 @@ namespace UnityEngine.Rendering.PostProcessing
             Interp(from.GetValue<T>(), to.GetValue<T>(), t);
         }
 
-        /// <summary>
-        /// Interpolates between two values given an interpolation factor <paramref name="t"/>.
-        /// </summary>
-        /// <param name="from">The value to interpolate from</param>
-        /// <param name="to">The value to interpolate to</param>
-        /// <param name="t">An interpolation factor (generally in range <c>[0,1]</c>)</param>
-        /// <remarks>
-        /// By default this method does a "snap" interpolation, meaning it will return the value
-        /// <paramref name="to"/> if <paramref name="t"/> is higher than 0, <paramref name="from"/>
-        /// otherwise.
-        /// </remarks>
-        public virtual void Interp(T from, T to, float t)
+        /// <!-- Badly formed XML comment ignored for member "M:UnityEngine.Rendering.PostProcessing.ParameterOverride`1.Interp(`0,`0,System.Single)" -->
+                        public virtual void Interp(T from, T to, float t)
         {
             // Returns `to` if `dt > 0` by default so we don't have to write overrides for bools and
             // enumerations.
             value = t > 0f ? to : from;
         }
 
-        /// <summary>
-        /// Sets the value for this parameter to <paramref name="x"/> and mark the override state
-        /// to <c>true</c>.
-        /// </summary>
-        /// <param name="x"></param>
-        public void Override(T x)
+        /// <!-- Badly formed XML comment ignored for member "M:UnityEngine.Rendering.PostProcessing.ParameterOverride`1.Override(`0)" -->
+                        public void Override(T x)
         {
             overrideState = true;
             value = x;
@@ -155,8 +109,8 @@ namespace UnityEngine.Rendering.PostProcessing
             value = parameter.GetValue<T>();
         }
         
-        /// <inheritdoc />
-        public override int GetHash()
+        ///     <inheritdoc />
+                        public override int GetHash()
         {
             unchecked
             {
@@ -167,11 +121,11 @@ namespace UnityEngine.Rendering.PostProcessing
             }
         }
 
-        /// <summary>
-        /// Implicit conversion between <see cref="ParameterOverride{T}"/> and its value type.
-        /// </summary>
-        /// <param name="prop">The parameter to implicitly cast</param>
-        public static implicit operator T(ParameterOverride<T> prop)
+        ///     <summary>
+                ///     Implicit conversion between <see cref="ParameterOverride{T}"/> and its value type.
+                ///     </summary>
+                ///     <param name="prop">The parameter to implicitly cast</param>
+                        public static implicit operator T(ParameterOverride<T> prop)
         {
             return prop.value;
         }
