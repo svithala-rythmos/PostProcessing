@@ -18,10 +18,10 @@ namespace UnityEngine.Rendering.PostProcessing
         Fixed
     }
 
-    /// <summary>
-    /// A volume parameter holding a <see cref="EyeAdaptation"/> value.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     A volume parameter holding a <see cref="EyeAdaptation"/> value.
+        ///     </summary>
+            [Serializable]
     public sealed class EyeAdaptationParameter : ParameterOverride<EyeAdaptation> {}
 
     ///     <summary>
