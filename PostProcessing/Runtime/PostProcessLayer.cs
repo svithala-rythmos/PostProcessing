@@ -26,31 +26,31 @@ namespace UnityEngine.Rendering.PostProcessing
     public sealed class PostProcessLayer : MonoBehaviour
     {
         ///     <summary>
-                ///     Builtin anti-aliasing methods.
-                ///     </summary>
-                        public enum Antialiasing
+                                ///     Builtin anti-aliasing methods.
+                                ///     </summary>
+                                                        public enum Antialiasing
         {
             ///     <summary>
-                        ///     No anti-aliasing.
-                        ///     </summary>
-                                    None,
+                                                ///     No anti-aliasing.
+                                                ///     </summary>
+                                                                                    None,
 
             ///     <summary>
-                        ///     Fast Approximate Anti-aliasing (FXAA). Fast but low quality.
-                        ///     </summary>
-                                    FastApproximateAntialiasing,
+                                                ///     Fast Approximate Anti-aliasing (FXAA). Fast but low quality.
+                                                ///     </summary>
+                                                                                    FastApproximateAntialiasing,
 
             ///     <summary>
-                        ///     Subpixel Morphological Anti-aliasing (SMAA). Slower but higher quality than FXAA.
-                        ///     </summary>
-                                    SubpixelMorphologicalAntialiasing,
+                                                ///     Subpixel Morphological Anti-aliasing (SMAA). Slower but higher quality than FXAA.
+                                                ///     </summary>
+                                                                                    SubpixelMorphologicalAntialiasing,
 
             ///     <summary>
-                        ///     Temporal Anti-aliasing (TAA). As fast as SMAA but generally higher quality. Because
-                        ///     of it's temporal nature, it can introduce ghosting artifacts on fast moving objects
-                        ///     in highly contrasted areas.
-                        ///     </summary>
-                                    TemporalAntialiasing
+                                                ///     Temporal Anti-aliasing (TAA). As fast as SMAA but generally higher quality. Because
+                                                ///     of it's temporal nature, it can introduce ghosting artifacts on fast moving objects
+                                                ///     in highly contrasted areas.
+                                                ///     </summary>
+                                                                                    TemporalAntialiasing
         }
 
         /// <!-- Badly formed XML comment ignored for member "F:UnityEngine.Rendering.PostProcessing.PostProcessLayer.volumeTrigger" -->
