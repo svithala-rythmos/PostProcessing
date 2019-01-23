@@ -11,25 +11,25 @@ namespace UnityEngine.Rendering.PostProcessing
         Lower, Low, Medium, High, Higher, Ultra, Overkill, Custom
     }
 
-    /// <summary>
-    /// Screen-space Reflections buffer sizes.
-    /// </summary>
-    public enum ScreenSpaceReflectionResolution
+    ///     <summary>
+        ///     Screen-space Reflections buffer sizes.
+        ///     </summary>
+            public enum ScreenSpaceReflectionResolution
     {
-        /// <summary>
-        /// Downsampled buffer. Faster but lower quality.
-        /// </summary>
-        Downsampled,
+        ///     <summary>
+                ///     Downsampled buffer. Faster but lower quality.
+                ///     </summary>
+                        Downsampled,
 
-        /// <summary>
-        /// Full-sized buffer. Slower but higher quality.
-        /// </summary>
-        FullSize,
+        ///     <summary>
+                ///     Full-sized buffer. Slower but higher quality.
+                ///     </summary>
+                        FullSize,
 
-        /// <summary>
-        /// Supersampled buffer. Very slow but much higher quality.
-        /// </summary>
-        Supersampled
+        ///     <summary>
+                ///     Supersampled buffer. Very slow but much higher quality.
+                ///     </summary>
+                        Supersampled
     }
 
     ///     <summary>
