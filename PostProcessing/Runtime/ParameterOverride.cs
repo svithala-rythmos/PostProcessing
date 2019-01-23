@@ -218,18 +218,18 @@ namespace UnityEngine.Rendering.PostProcessing
             [Serializable]
     public sealed class BoolParameter : ParameterOverride<bool> {}
 
-    /// <summary>
-    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Color"/> value.
-    /// </summary>
-    /// <remarks>
-    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
-    /// for each channel.
-    /// </remarks>
-    [Serializable]
+    ///     <summary>
+        ///     A <see cref="ParameterOverride{T}"/> that holds a <see cref="Color"/> value.
+        ///     </summary>
+        ///     <remarks>
+        ///     The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+        ///     for each channel.
+        ///     </remarks>
+            [Serializable]
     public sealed class ColorParameter : ParameterOverride<Color>
     {
-        /// <inheritdoc />
-        public override void Interp(Color from, Color to, float t)
+        ///     <inheritdoc />
+                        public override void Interp(Color from, Color to, float t)
         {
             // Lerping color values is a sensitive subject... We looked into lerping colors using
             // HSV and LCH but they have some downsides that make them not work correctly in all
@@ -241,11 +241,11 @@ namespace UnityEngine.Rendering.PostProcessing
             value.a = from.a + (to.a - from.a) * t;
         }
 
-        /// <summary>
-        /// Implicit conversion between <see cref="ColorParameter"/> and a <see cref="Vector4"/>.
-        /// </summary>
-        /// <param name="prop">The parameter to implicitly cast</param>
-        public static implicit operator Vector4(ColorParameter prop)
+        ///     <summary>
+                ///     Implicit conversion between <see cref="ColorParameter"/> and a <see cref="Vector4"/>.
+                ///     </summary>
+                ///     <param name="prop">The parameter to implicitly cast</param>
+                        public static implicit operator Vector4(ColorParameter prop)
         {
             return prop.value;
         }
