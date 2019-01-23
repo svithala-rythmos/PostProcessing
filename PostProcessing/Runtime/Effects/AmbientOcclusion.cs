@@ -58,10 +58,10 @@ namespace UnityEngine.Rendering.PostProcessing
             [Serializable]
     public sealed class AmbientOcclusionModeParameter : ParameterOverride<AmbientOcclusionMode> {}
 
-    /// <summary>
-    /// A volume parameter holding a <see cref="AmbientOcclusionQuality"/> value.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     A volume parameter holding a <see cref="AmbientOcclusionQuality"/> value.
+        ///     </summary>
+            [Serializable]
     public sealed class AmbientOcclusionQualityParameter : ParameterOverride<AmbientOcclusionQuality> {}
 
     ///     <summary>
