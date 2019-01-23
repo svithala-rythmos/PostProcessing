@@ -2,53 +2,53 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class holds settings for the Lens Distortion effect.
-    /// </summary>
-    [Serializable]
+    ///     <summary>
+        ///     This class holds settings for the Lens Distortion effect.
+        ///     </summary>
+            [Serializable]
     [PostProcess(typeof(LensDistortionRenderer), "Unity/Lens Distortion")]
     public sealed class LensDistortion : PostProcessEffectSettings
     {
-        /// <summary>
-        /// The total amount of distortion to apply.
-        /// </summary>
-        [Range(-100f, 100f), Tooltip("Total distortion amount.")]
+        ///     <summary>
+                ///     The total amount of distortion to apply.
+                ///     </summary>
+                        [Range(-100f, 100f), Tooltip("Total distortion amount.")]
         public FloatParameter intensity = new FloatParameter { value = 0f };
 
-        /// <summary>
-        /// Multiplies the intensity value on the x-axis. Setting this value to 0 will disable distortion on this axis.
-        /// </summary>
-        [Range(0f, 1f), DisplayName("X Multiplier"), Tooltip("Intensity multiplier on the x-axis. Set it to 0 to disable distortion on this axis.")]
+        ///     <summary>
+                ///     Multiplies the intensity value on the x-axis. Setting this value to 0 will disable distortion on this axis.
+                ///     </summary>
+                        [Range(0f, 1f), DisplayName("X Multiplier"), Tooltip("Intensity multiplier on the x-axis. Set it to 0 to disable distortion on this axis.")]
         public FloatParameter intensityX = new FloatParameter { value = 1f };
 
-        /// <summary>
-        /// Multiplies the intensity value on the y-axis. Setting this value to 0 will disable distortion on this axis.
-        /// </summary>
-        [Range(0f, 1f), DisplayName("Y Multiplier"), Tooltip("Intensity multiplier on the y-axis. Set it to 0 to disable distortion on this axis.")]
+        ///     <summary>
+                ///     Multiplies the intensity value on the y-axis. Setting this value to 0 will disable distortion on this axis.
+                ///     </summary>
+                        [Range(0f, 1f), DisplayName("Y Multiplier"), Tooltip("Intensity multiplier on the y-axis. Set it to 0 to disable distortion on this axis.")]
         public FloatParameter intensityY = new FloatParameter { value = 1f };
 
-        /// <summary>
-        /// The center point for the distortion (x-axis).
-        /// </summary>
-        [Space]
+        ///     <summary>
+                ///     The center point for the distortion (x-axis).
+                ///     </summary>
+                        [Space]
         [Range(-1f, 1f), Tooltip("Distortion center point (x-axis).")]
         public FloatParameter centerX = new FloatParameter { value = 0f };
 
-        /// <summary>
-        /// The center point for the distortion (y-axis).
-        /// </summary>
-        [Range(-1f, 1f), Tooltip("Distortion center point (y-axis).")]
+        ///     <summary>
+                ///     The center point for the distortion (y-axis).
+                ///     </summary>
+                        [Range(-1f, 1f), Tooltip("Distortion center point (y-axis).")]
         public FloatParameter centerY = new FloatParameter { value = 0f };
 
-        /// <summary>
-        /// A global screen scaling factor.
-        /// </summary>
-        [Space]
+        ///     <summary>
+                ///     A global screen scaling factor.
+                ///     </summary>
+                        [Space]
         [Range(0.01f, 5f), Tooltip("Global screen scaling.")]
         public FloatParameter scale = new FloatParameter { value = 1f };
 
-        /// <inheritdoc />
-        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
+        ///     <inheritdoc />
+                        public override bool IsEnabledAndSupported(PostProcessRenderContext context)
         {
             return enabled.value
                 && !Mathf.Approximately(intensity, 0f)
