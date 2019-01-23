@@ -15,25 +15,25 @@ namespace UnityEngine.Rendering.PostProcessing
             NeighborhoodBlending = 6
         }
 
-        /// <summary>
-        /// Quality presets.
-        /// </summary>
-        public enum Quality
+        ///     <summary>
+                ///     Quality presets.
+                ///     </summary>
+                        public enum Quality
         {
-            /// <summary>
-            /// Low quality.
-            /// </summary>
-            Low = 0,
+            ///     <summary>
+                        ///     Low quality.
+                        ///     </summary>
+                                    Low = 0,
 
-            /// <summary>
-            /// Medium quality.
-            /// </summary>
-            Medium = 1,
+            ///     <summary>
+                        ///     Medium quality.
+                        ///     </summary>
+                                    Medium = 1,
 
-            /// <summary>
-            /// High quality.
-            /// </summary>
-            High = 2
+            ///     <summary>
+                        ///     High quality.
+                        ///     </summary>
+                                    High = 2
         }
 
         ///     <summary>
