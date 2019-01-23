@@ -101,6 +101,7 @@ namespace UnityEngine.Rendering.PostProcessing
         public ComputeShaders computeShaders;
 
 #if UNITY_EDITOR
+        
         public delegate void ChangeHandler();
         
         public ChangeHandler changeHandler;
