@@ -8,30 +8,30 @@ namespace UnityEngine.Rendering.PostProcessing
             [Serializable]
     public sealed class HistogramMonitor : Monitor
     {
-        /// <summary>
-        /// Displayable channels.
-        /// </summary>
-        public enum Channel
+        ///     <summary>
+                ///     Displayable channels.
+                ///     </summary>
+                        public enum Channel
         {
-            /// <summary>
-            /// The red channel.
-            /// </summary>
-            Red,
+            ///     <summary>
+                        ///     The red channel.
+                        ///     </summary>
+                                    Red,
 
-            /// <summary>
-            /// The green channel.
-            /// </summary>
-            Green,
+            ///     <summary>
+                        ///     The green channel.
+                        ///     </summary>
+                                    Green,
 
-            /// <summary>
-            /// The blue channel.
-            /// </summary>
-            Blue,
+            ///     <summary>
+                        ///     The blue channel.
+                        ///     </summary>
+                                    Blue,
 
-            /// <summary>
-            /// The master (luminance) channel.
-            /// </summary>
-            Master
+            ///     <summary>
+                        ///     The master (luminance) channel.
+                        ///     </summary>
+                                    Master
         }
 
         ///     <summary>
