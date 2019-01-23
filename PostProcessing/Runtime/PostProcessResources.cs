@@ -215,6 +215,7 @@ namespace UnityEngine.Rendering.PostProcessing
 #if UNITY_EDITOR
         
         
+        
         public delegate void ChangeHandler();
         
         public ChangeHandler changeHandler;
