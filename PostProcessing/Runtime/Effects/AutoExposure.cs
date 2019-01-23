@@ -2,20 +2,20 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// Eye adaptation modes.
-    /// </summary>
-    public enum EyeAdaptation
+    ///     <summary>
+        ///     Eye adaptation modes.
+        ///     </summary>
+            public enum EyeAdaptation
     {
-        /// <summary>
-        /// Progressive (smooth) eye adaptation.
-        /// </summary>
-        Progressive,
+        ///     <summary>
+                ///     Progressive (smooth) eye adaptation.
+                ///     </summary>
+                        Progressive,
 
-        /// <summary>
-        /// Fixed (instant) eye adaptation.
-        /// </summary>
-        Fixed
+        ///     <summary>
+                ///     Fixed (instant) eye adaptation.
+                ///     </summary>
+                        Fixed
     }
 
     ///     <summary>
