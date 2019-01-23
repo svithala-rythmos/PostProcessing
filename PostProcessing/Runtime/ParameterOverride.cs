@@ -305,14 +305,14 @@ namespace UnityEngine.Rendering.PostProcessing
         }
     }
 
-    /// <summary>
-    /// A <see cref="ParameterOverride{T}"/> that holds a <see cref="Spline"/> value.
-    /// </summary>
-    /// <remarks>
-    /// The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
-    /// for each point on the curve.
-    /// </remarks>
-    [Serializable]
+    ///     <summary>
+        ///     A <see cref="ParameterOverride{T}"/> that holds a <see cref="Spline"/> value.
+        ///     </summary>
+        ///     <remarks>
+        ///     The interpolation method for this parameter is the same as <see cref="Mathf.LerpUnclamped"/>
+        ///     for each point on the curve.
+        ///     </remarks>
+            [Serializable]
     public sealed class SplineParameter : ParameterOverride<Spline>
     {
         /// <inheritdoc />
@@ -330,8 +330,8 @@ namespace UnityEngine.Rendering.PostProcessing
                 value.Cache(Time.renderedFrameCount);
         }
         
-        /// <inheritdoc />
-        public override void Interp(Spline from, Spline to, float t)
+        ///     <inheritdoc />
+                        public override void Interp(Spline from, Spline to, float t)
         {
             if (from == null || to == null)
             {
