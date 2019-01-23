@@ -7,16 +7,16 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace UnityEditor.Rendering.PostProcessing
 {
-    /// <summary>
-    /// This class is used to draw the user interface in the inspector for all the settings
-    /// contained in a <see cref="PostProcessProfile"/>.
-    /// </summary>
-    public sealed class EffectListEditor
+    ///     <summary>
+        ///     This class is used to draw the user interface in the inspector for all the settings
+        ///     contained in a <see cref="PostProcessProfile"/>.
+        ///     </summary>
+            public sealed class EffectListEditor
     {
-        /// <summary>
-        /// A reference to the <see cref="PostProcessProfile"/> being displayed by this editor.
-        /// </summary>
-        public PostProcessProfile asset { get; private set; }
+        ///     <summary>
+                ///     A reference to the <see cref="PostProcessProfile"/> being displayed by this editor.
+                ///     </summary>
+                        public PostProcessProfile asset { get; private set; }
 
         Editor m_BaseEditor;
 
@@ -26,25 +26,25 @@ namespace UnityEditor.Rendering.PostProcessing
         Dictionary<Type, Type> m_EditorTypes; // SettingsType => EditorType
         List<PostProcessEffectBaseEditor> m_Editors;
 
-        /// <summary>
-        /// Creates a new instance to be used inside an existing <see cref="Editor"/>.
-        /// </summary>
-        /// <param name="editor">A reference to the parent editor instance.</param>
-        public EffectListEditor(Editor editor)
+        ///     <summary>
+                ///     Creates a new instance to be used inside an existing <see cref="Editor"/>.
+                ///     </summary>
+                ///     <param name="editor">A reference to the parent editor instance.</param>
+                        public EffectListEditor(Editor editor)
         {
             Assert.IsNotNull(editor);
             m_BaseEditor = editor;
         }
 
-        /// <summary>
-        /// Initializes the editor. This method should be called before <see cref="OnGUI"/> is
-        /// called.
-        /// </summary>
-        /// <param name="asset">A reference to the <see cref="PostProcessProfile"/> that will be
-        /// displayed.</param>
-        /// <param name="serializedObject">A <see cref="SerializedObject"/> of the given <paramref
-        /// name="asset"/> instance.</param>
-        public void Init(PostProcessProfile asset, SerializedObject serializedObject)
+        ///     <summary>
+                ///     Initializes the editor. This method should be called before <see cref="OnGUI"/> is
+                ///     called.
+                ///     </summary>
+                ///     <param name="asset">A reference to the <see cref="PostProcessProfile"/> that will be
+                ///     displayed.</param>
+                ///     <param name="serializedObject">A <see cref="SerializedObject"/> of the given <paramref
+                ///     name="asset"/> instance.</param>
+                        public void Init(PostProcessProfile asset, SerializedObject serializedObject)
         {
             Assert.IsNotNull(asset);
             Assert.IsNotNull(serializedObject);
@@ -128,10 +128,10 @@ namespace UnityEditor.Rendering.PostProcessing
                 CreateEditor(asset.settings[i], m_SettingsProperty.GetArrayElementAtIndex(i));
         }
 
-        /// <summary>
-        /// This method should be called when the editor is destroyed or disabled.
-        /// </summary>
-        public void Clear()
+        ///     <summary>
+                ///     This method should be called when the editor is destroyed or disabled.
+                ///     </summary>
+                        public void Clear()
         {
             if (m_Editors == null)
                 return; // Hasn't been inited yet
@@ -145,10 +145,10 @@ namespace UnityEditor.Rendering.PostProcessing
             Undo.undoRedoPerformed -= OnUndoRedoPerformed;
         }
 
-        /// <summary>
-        /// Draws the settings for the <see cref="PostProcessProfile"/> referenced in the editor.
-        /// </summary>
-        public void OnGUI()
+        ///     <summary>
+                ///     Draws the settings for the <see cref="PostProcessProfile"/> referenced in the editor.
+                ///     </summary>
+                        public void OnGUI()
         {
             if (asset == null)
                 return;
