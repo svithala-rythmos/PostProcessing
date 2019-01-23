@@ -3,63 +3,64 @@ using System.Collections.Generic;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// A list of debug overlays.
-    /// </summary>
-    public enum DebugOverlay
+    ///     <summary>
+        ///     A list of debug overlays.
+        ///     </summary>
+            public enum DebugOverlay
     {
-        /// <summary>
-        /// No overlay.
-        /// </summary>
-        None,
+        ///     <summary>
+                ///     No overlay.
+                ///     </summary>
+                        None,
 
-        /// <summary>
-        /// Displays the depth buffer.
-        /// </summary>
-        Depth,
+        ///     <summary>
+                ///     Displays the depth buffer.
+                ///     </summary>
+                        Depth,
 
-        /// <summary>
-        /// Displays the screen-space normals buffer.
-        /// </summary>
-        Normals,
+        ///     <summary>
+                ///     Displays the screen-space normals buffer.
+                ///     </summary>
+                        Normals,
 
-        /// <summary>
-        /// Displays the screen-space motion vectors.
-        /// </summary>
-        MotionVectors,
+        ///     <summary>
+                ///     Displays the screen-space motion vectors.
+                ///     </summary>
+                        MotionVectors,
 
-        /// <summary>
-        /// Dims the screen and displays NaN and Inf pixels with a bright pink color.
-        /// </summary>
-        NANTracker,
+        ///     <summary>
+                ///     Dims the screen and displays NaN and Inf pixels with a bright pink color.
+                ///     </summary>
+                        NANTracker,
 
-        /// <summary>
-        /// A color blindness simulator.
-        /// </summary>
-        ColorBlindnessSimulation,
+        ///     <summary>
+                ///     A color blindness simulator.
+                ///     </summary>
+                        ColorBlindnessSimulation,
 
         // Menu item separator for the inspector
+        
         _,
 
-        /// <summary>
-        /// Displays the raw ambient occlusion map.
-        /// </summary>
-        AmbientOcclusion,
+        ///     <summary>
+                ///     Displays the raw ambient occlusion map.
+                ///     </summary>
+                        AmbientOcclusion,
 
-        /// <summary>
-        /// Displays the bloom buffer.
-        /// </summary>
-        BloomBuffer,
+        ///     <summary>
+                ///     Displays the bloom buffer.
+                ///     </summary>
+                        BloomBuffer,
 
-        /// <summary>
-        /// Displays the thresholded buffer used to generate bloom.
-        /// </summary>
-        BloomThreshold,
+        ///     <summary>
+                ///     Displays the thresholded buffer used to generate bloom.
+                ///     </summary>
+                        BloomThreshold,
 
-        /// <summary>
-        /// Displays depth of field helpers.
-        /// </summary>
-        DepthOfField
+        ///     <summary>
+                ///     Displays depth of field helpers.
+                ///     </summary>
+                        DepthOfField
     }
 
     ///     <summary>
