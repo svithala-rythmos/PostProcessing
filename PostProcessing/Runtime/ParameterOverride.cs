@@ -352,35 +352,31 @@ namespace UnityEngine.Rendering.PostProcessing
         }
     }
 
-    /// <summary>
-    /// A set of default textures to use as default values for <see cref="TextureParameter"/>.
-    /// </summary>
-    public enum TextureParameterDefault
+    ///     <summary>
+        ///     A set of default textures to use as default values for <see cref="TextureParameter"/>.
+        ///     </summary>
+            public enum TextureParameterDefault
     {
-        /// <summary>
-        /// No texture, or <c>null</c>.
-        /// </summary>
-        None,
+        /// <!-- Badly formed XML comment ignored for member "F:UnityEngine.Rendering.PostProcessing.TextureParameterDefault.None" -->
+                        None,
 
-        /// <summary>
-        /// A black texture.
-        /// </summary>
-        Black,
+        ///     <summary>
+                ///     A black texture.
+                ///     </summary>
+                        Black,
 
-        /// <summary>
-        /// A white texture.
-        /// </summary>
-        White,
+        ///     <summary>
+                ///     A white texture.
+                ///     </summary>
+                        White,
 
-        /// <summary>
-        /// A transparent texture.
-        /// </summary>
-        Transparent,
+        ///     <summary>
+                ///     A transparent texture.
+                ///     </summary>
+                        Transparent,
 
-        /// <summary>
-        /// A 2D lookup table in strip format with <c>width = height * height</c>.
-        /// </summary>
-        Lut2D
+        /// <!-- Badly formed XML comment ignored for member "F:UnityEngine.Rendering.PostProcessing.TextureParameterDefault.Lut2D" -->
+                        Lut2D
     }
 
     ///     <summary>
