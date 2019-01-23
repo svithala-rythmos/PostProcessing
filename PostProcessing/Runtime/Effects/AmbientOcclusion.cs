@@ -21,35 +21,35 @@ namespace UnityEngine.Rendering.PostProcessing
                         MultiScaleVolumetricObscurance
     }
 
-    /// <summary>
-    /// Quality settings for <see cref="AmbientOcclusionMode.ScalableAmbientObscurance"/>.
-    /// </summary>
-    public enum AmbientOcclusionQuality
+    ///     <summary>
+        ///     Quality settings for <see cref="AmbientOcclusionMode.ScalableAmbientObscurance"/>.
+        ///     </summary>
+            public enum AmbientOcclusionQuality
     {
-        /// <summary>
-        /// 4 samples + downsampling.
-        /// </summary>
-        Lowest,
+        ///     <summary>
+                ///     4 samples + downsampling.
+                ///     </summary>
+                        Lowest,
 
-        /// <summary>
-        /// 6 samples + downsampling.
-        /// </summary>
-        Low,
+        ///     <summary>
+                ///     6 samples + downsampling.
+                ///     </summary>
+                        Low,
 
-        /// <summary>
-        /// 10 samples + downsampling.
-        /// </summary>
-        Medium,
+        ///     <summary>
+                ///     10 samples + downsampling.
+                ///     </summary>
+                        Medium,
 
-        /// <summary>
-        /// 8 samples.
-        /// </summary>
-        High,
+        ///     <summary>
+                ///     8 samples.
+                ///     </summary>
+                        High,
 
-        /// <summary>
-        /// 12 samples.
-        /// </summary>
-        Ultra
+        ///     <summary>
+                ///     12 samples.
+                ///     </summary>
+                        Ultra
     }
 
     ///     <summary>
