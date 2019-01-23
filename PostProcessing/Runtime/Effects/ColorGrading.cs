@@ -2,29 +2,29 @@ using System;
 
 namespace UnityEngine.Rendering.PostProcessing
 {
-    /// <summary>
-    /// Color grading modes.
-    /// </summary>
-    public enum GradingMode
+    ///     <summary>
+        ///     Color grading modes.
+        ///     </summary>
+            public enum GradingMode
     {
-        /// <summary>
-        /// This mode is aimed at lower-end platforms but it can be used on any platform. Grading is
-        /// applied to the final rendered frame clamped in a [0,1] range and stored in a standard
-        /// LUT.
-        /// </summary>
-        LowDefinitionRange,
+        ///     <summary>
+                ///     This mode is aimed at lower-end platforms but it can be used on any platform. Grading is
+                ///     applied to the final rendered frame clamped in a [0,1] range and stored in a standard
+                ///     LUT.
+                ///     </summary>
+                        LowDefinitionRange,
 
-        /// <summary>
-        /// This mode is aimed at platforms that support HDR rendering. All the color operations
-        /// will be applied in HDR and stored into a 3D log-encoded LUT to ensure a sufficient range
-        /// coverage and precision (Alexa LogC El1000).
-        /// </summary>
-        HighDefinitionRange,
+        ///     <summary>
+                ///     This mode is aimed at platforms that support HDR rendering. All the color operations
+                ///     will be applied in HDR and stored into a 3D log-encoded LUT to ensure a sufficient range
+                ///     coverage and precision (Alexa LogC El1000).
+                ///     </summary>
+                        HighDefinitionRange,
 
-        /// <summary>
-        /// This mode allows you to provide a custom 3D LUT authored in an external software. 
-        /// </summary>
-        External
+        ///     <summary>
+                ///     This mode allows you to provide a custom 3D LUT authored in an external software. 
+                ///     </summary>
+                        External
     }
 
     /// <summary>
